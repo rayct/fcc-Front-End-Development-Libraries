@@ -5,14 +5,24 @@
   
   <head>
     <!-- * Indicates Completed Course
-    1. Learn How Script Tags and Document Ready Work *
-    2. Target HTML Elements with Selectors Using jQuery *
-    3. Target HTML Elements by Class Using jQuery *
-    4. Target HTML Elements by id Using jQuery *
-    5. Delete Your jQuery Functions *
-    6. Target the Same Element with Multiple jQuery Selectors *
-    7. Remove Classes from an Element with jQuery 
-    8. Change the CSS of an Element Using jQuery
+    1.  Learn How Script Tags and Document Ready Work *
+    2.  Target HTML Elements with Selectors Using jQuery *
+    3.  Target HTML Elements by Class Using jQuery *
+    4.  Target HTML Elements by id Using jQuery *
+    5.  Delete Your jQuery Functions *
+    6.  Target the Same Element with Multiple jQuery Selectors *
+    7.  Remove Classes from an Element with jQuery *
+    8.  Change the CSS of an Element Using jQuery *
+    9.  Disable an Element Using jQuery *
+    10. Change Text Inside an Element Using jQuery *
+    11. Remove an Element Using jQuery *
+    12. 
+    13. 
+    14. 
+    15. 
+    16. 
+    17. 
+    18. 
     -->
 
     <!-- 
@@ -21,10 +31,16 @@
     $("button").addClass("animated bounce"); 
     $(".well").addClass("animated shake");
     $("#target3").addClass("animated fadeOut");
+    $("button").removeClass("btn-default");
 
     $("button").addClass("animated");
     $(".btn").addClass("shake");
     $("#target1").addClass("btn-primary");
+
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled". true);
+    $("#target4").html("<em>#target4</em>");
+    $("#target4").remove();
 
     });
     </script> 
