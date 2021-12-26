@@ -10,18 +10,66 @@ simplify and maintain the style sheets for your projects.
 In this Sass course, you'll learn how to store data in variables, nest CSS,
 create reusable styles with mixins, add logic and loops to your styles, and more. -->
 
-<!-- 
-    * Indicates Completed Course
-    1. Store Data with Sass Variables
-    2. 
-    3. 
-    4. 
-    5. 
-    6. 
+
+    <!-- * Indicates Completed Course -->
+
+    <!-- 1. Store Data with Sass Variables * -->
+
+    
+    <!-- 2. Nest CSS with Sass * -->
+
+
+    <!-- 3. Create Reusable CSS with Mixins * -->
+
+
+    <!-- 4. Use @if and @else to Add Logic To Your Styles * -->
+
+
+    <!-- 5. Use @for to Create a Sass Loop * -->
+    <!-- @for is used in two ways: "start through end" or "start to end".
+        The main difference is that the "start to end" excludes the end number as part of the count, 
+        and "start through end" includes the end number as part of the count.  -->
+        
+        <!-- <style type='text/scss'>
+            @for $j from 0 through 5 {
+            .text-#{$j} { font-size: 75px/5 * $j;}
+            }
+            </style>
+
+            <p class="text-1">Hello</p>
+            <p class="text-2">Hello</p>
+            <p class="text-3">Hello</p>
+            <p class="text-4">Hello</p>
+            <p class="text-5">Hello</p> 
+        -->
+
+
+
+
+    <!-- 6. Use @each to Map Over Items in a List  -->
+    <!-- The last challenge showed how the @for directive uses a starting and ending value to loop a certain number of times.
+        Sass also offers the @each directive which loops over each item in a list or map.
+        On each iteration, the variable gets assigned to the current value from the list or map. 
+
+        <style type='text/scss'>
+
+        div {
+        height: 200px;
+        width: 200px;
+        }
+        </style>
+
+        <div class="blue-bg"></div>
+        <div class="black-bg"></div>
+        <div class="red-bg"></div>
+    -->
+
+
+
+
     7. 
     8. 
     9. 
- -->
 
 
 <!DOCTYPE html>
@@ -32,16 +80,40 @@ create reusable styles with mixins, add logic and loops to your styles, and more
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASSPlayground</title>
 </head>
+
 <body>
     <style type='text/scss'>
-
-
-  .header{
-    text-align: center;
+    @mixin border-stroke($val) {
+        @if $val == light {
+     border: 1px solid black;
+    }
+    @else if $val == medium {
+        border: 3px solid black;
+    }
+    @else if $val == heavy {
+        border: 6px solid black;
+    }
+    @else {
+        border: none;
   }
-  .blog-post, h2 {
-    color: red;
+}
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
   }
+</style>
+
+<div id="box"></div>
+
+<div id="awesome"></div>
+
+<div class="blog-post">
+  <h1>Blog Title</h1>
+  <p>This is a paragraph</p>
+</div>
+
 </style>
 
 <h1 class="header">Learning Sass</h1>
