@@ -33,7 +33,7 @@ create reusable styles with mixins, add logic and loops to your styles, and more
             }
             </style> 
         -->
-
+        
         <!-- 
             <h1 class="header">Learning Sass</h1>
             <div class="blog-post">
@@ -49,64 +49,92 @@ create reusable styles with mixins, add logic and loops to your styles, and more
                 <p>Even more random text within a paragraph</p>
             </div>
         -->
-
-
+        
+        
     <!-- 2. Nest CSS with Sass * -->
         <!-- 
             Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
             Normally, each element is targeted on a different line to style it 
         -->
-
+        
         <!-- 
             <style type='text/scss'>
-            .blog-post {
-
-            h1 {
-                text-align: center;
-                color: blue;
+                .blog-post {
+                    
+                    h1 {
+                        text-align: center;
+                        color: blue;
+                    }
+                    p {
+                        font-size: 20px;
+                    }
                 }
-            p {
-                font-size: 20px;
-                }
-            }
             </style>
-
+            
             <div class="blog-post">
                 <h1>Blog Title</h1>
                 <p>This is a paragraph</p>
             </div> 
         -->
-
-
+        
+        
     <!-- 3. Create Reusable CSS with Mixins * -->
         <!-- 
             In Sass, a mixin is a group of CSS declarations that can be reused throughout the style sheet.
         -->
-
+    
         <!-- 
             <style type='text/scss'>
-            @mixin border-radius($radius) {
-            -webkit-border-radius: $radius;
-            -moz-border-radius: $radius;
-            -ms-border-radius: $radius;
-            border-radius: $radius;
-            }
-            #awesome {
-                width: 150px;
-                height: 150px;
-                background-color: green;
-                @include border-raduis(15px);
-
-            }
+                @mixin border-radius($radius) {
+                    -webkit-border-radius: $radius;
+                    -moz-border-radius: $radius;
+                    -ms-border-radius: $radius;
+                    border-radius: $radius;
+                }
+                #awesome {
+                    width: 150px;
+                    height: 150px;
+                    background-color: green;
+                    @include border-raduis(15px);
+                    
+                }
             </style>
             <div id="awesome"></div>
         -->
-
-
+        
+        
     <!-- 4. Use @if and @else to Add Logic To Your Styles * -->
-        <!--  -->
-        <!--  -->
+        <!-- 
+            The @if directive in Sass is useful to test for a specific case - it works just like the if statement in JavaScript. 
+        -->
 
+        <!--     
+            <style type='text/scss'>
+                @mixin border-stroke($val) {
+                    @if $val == light {
+                    border: 1px solid black;
+                    }
+                    @else if $val == medium {
+                    border: 3px solid black;
+                    }
+                    @else if $val == heavy {
+                    border: 6px solid black;
+                    }
+                    @else {
+                    border: none;
+                    }
+                }
+                #box {
+                    width: 150px;
+                    height: 150px;
+                    background-color: red;
+                    @include border-stroke(medium);
+                }
+            </style>
+        
+            <div id="box"></div>
+        -->
+            
 
     <!-- 5. Use @for to Create a Sass Loop * -->
         <!-- 
@@ -115,9 +143,10 @@ create reusable styles with mixins, add logic and loops to your styles, and more
             and "start through end" includes the end number as part of the count. 
         -->
         
-        <!-- <style type='text/scss'>
+        <!-- 
+            <style type='text/scss'>
             @for $j from 0 through 5 {
-            .text-#{$j} { font-size: 75px/5 * $j;}
+                .text-#{$j} { font-size: 75px/5 * $j;}
             }
             </style>
 
@@ -139,8 +168,8 @@ create reusable styles with mixins, add logic and loops to your styles, and more
             <style type='text/scss'>
 
             div {
-            height: 200px;
-            width: 200px;
+                height: 200px;
+                width: 200px;
             }
             </style>
 
@@ -160,28 +189,4 @@ create reusable styles with mixins, add logic and loops to your styles, and more
 
 
 
-    <!-- <style type='text/scss'>
-    @mixin border-stroke($val) {
-        @if $val == light {
-        border: 1px solid black;
-    }
-        @else if $val == medium {
-        border: 3px solid black;
-    }
-        @else if $val == heavy {
-        border: 6px solid black;
-    }
-        @else {
-        border: none;
-     }
-    }
-    #box {
-    width: 150px;
-    height: 150px;
-    background-color: red;
-    @include border-stroke(medium);
-    }
-    </style>
-
-    <div id="box"></div> -->
 
