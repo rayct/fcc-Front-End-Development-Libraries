@@ -158,14 +158,20 @@ create reusable styles with mixins, add logic and loops to your styles, and more
         -->
 
 
-    <!-- 6. Use @each to Map Over Items in a List  -->
+    <!-- 6. Use @each to Map Over Items in a List  * -->
         <!-- 
             The last challenge showed how the @for directive uses a starting and ending value to loop a certain number of times.
             Sass also offers the @each directive which loops over each item in a list or map.
             On each iteration, the variable gets assigned to the current value from the list or map. 
         --> 
-        <!--
+        
+        <!-- 
             <style type='text/scss'>
+            @each $color in blue, black, red {
+            .#{$color}-bg {
+                background-color: $color;
+            }
+        }
 
             div {
                 height: 200px;
@@ -177,8 +183,11 @@ create reusable styles with mixins, add logic and loops to your styles, and more
             <div class="black-bg"></div>
             <div class="red-bg"></div>
         -->
+       
 
-
+     <!-- 7.  -->
+     <!-- 8.  -->
+     <!-- 9.  -->
 
 
 
