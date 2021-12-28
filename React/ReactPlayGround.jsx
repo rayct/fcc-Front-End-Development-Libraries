@@ -1,4 +1,4 @@
-// 1. Create a Simple JSX Element
+// 1./47 Create a Simple JSX Element
 
 // React is an Open Source view library created and maintained by Facebook.
 // It's a great tool to render the User Interface (UI) of modern web applications.
@@ -11,7 +11,7 @@
 const JSX = <h1>Hello JSX!</h1>
 
 
-// 2. Create a Complex JSX Element
+// 2./47 Create a Complex JSX Element
 
 // The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.
 // One important thing to know about nested JSX is that it must return a single element.
@@ -34,7 +34,7 @@ const JSX =
     </div>
 
 
-// 3. Add Comments in JSX
+// 3./47 Add Comments in JSX
 
 // JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code.
 // Like most programming languages, JSX has its own way to do this.
@@ -52,7 +52,7 @@ const JSX = (
 );
 
 
-// 4. Render HTML Elements to the DOM
+// 4./47 Render HTML Elements to the DOM
 const JSX = (
   <div>
     <h1>Hello World</h1>
@@ -61,3 +61,7 @@ const JSX = (
 );
 // Change code below this line
 
+ReactDOM.render(JSX, document.getElementById, ('challenge-node'));
+
+
+// 5./47  
