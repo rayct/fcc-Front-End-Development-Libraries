@@ -64,4 +64,41 @@ const JSX = (
 ReactDOM.render(JSX, document.getElementById, ('challenge-node'));
 
 
-// 5./47  
+// 5./47  Define an HTML Class in JSX
+
+// TASK: Apply/Add a class of myDiv to the div provided in the JSX code.
+const JSX = (
+  <div className='myDiv'>
+    <h1>Add a class to this div</h1>
+  </div>
+);
+
+
+// 6./47 Learn About Self-Closing JSX Tags
+
+// TASK: Fix the errors in the code editor so that it is valid JSX and successfully transpiles.
+// Make sure you don't change any of the content - you only need to close tags where they are needed.
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br />
+    <p>Be sure to close all tags!</p>
+    <hr />
+  </div>
+);
+
+
+// 7./47 Create a Stateless Functional Component
+
+// TASK: The code editor has a function called MyComponent.
+// Complete this function so it returns a single div element which contains some string of text.
+// Note: The text is considered a child of the div element, so you will not be able to use a self-closing tag.
+const MyComponent = function() {
+  // Change code below this line
+
+
+
+  // Change code above this line
+}
+
+
+// 8./47 
