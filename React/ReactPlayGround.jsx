@@ -94,6 +94,9 @@ const JSX = (
 // Note: The text is considered a child of the div element, so you will not be able to use a self-closing tag.
 const MyComponent = function() {
   // Change code below this line
+  return (
+    <div className="MyComponent">"Hello my Name is JSX Function"</div>
+  );
 
 
 
@@ -101,4 +104,50 @@ const MyComponent = function() {
 }
 
 
-// 8./47 
+// 8./47 Create a React Component
+
+// TASK: MyComponent is defined in the code editor using class syntax.
+// Finish writing the render method so it returns a div element that contains an h1 with the text Hello React!.
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    // Change code below this line
+    
+
+
+    // Change code above this line
+  }
+};
+
+
+// 9./47
+
+// 10./47
+
+// 11./47
+
+// 12./47
+
+// 13./47
+
+// 14./47
+
+// 15./47
+// 16./47
+// 17./47
+// 18./47
+// 19./47
+// 20./47
+// 21./47
+// 22./47
+// 23./47
+// 24./47
+// 25./47
+// 26./47
+// 27./47
+// 28./47
+// 29./47
+// 30./47
+// 31./47
