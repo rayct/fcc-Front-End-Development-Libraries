@@ -115,14 +115,47 @@ class MyComponent extends React.Component {
   render() {
     // Change code below this line
     
-
+    return (
+      <div>
+        <h1>Hello React!</h1>
+      </div>
+    );
 
     // Change code above this line
   }
 };
 
 
-// 9./47
+// 9./47 Create a Component with Composition
+
+// TASK: Compose the two together by rendering the ChildComponent within the ParentComponent.
+// Make sure to close the ChildComponent tag with a forward slash.
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+
+        <ChildComponent/>
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
 
 // 10./47
 
