@@ -1,4 +1,4 @@
-// 1./47 Create a Simple JSX Element
+// 1./47 -  Create a Simple JSX Element
 
 // React is an Open Source view library created and maintained by Facebook.
 // It's a great tool to render the User Interface (UI) of modern web applications.
@@ -11,7 +11,7 @@
 const JSX = <h1>Hello JSX!</h1>
 
 
-// 2./47 Create a Complex JSX Element
+// 2./47 -  Create a Complex JSX Element
 
 // The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.
 // One important thing to know about nested JSX is that it must return a single element.
@@ -34,7 +34,7 @@ const JSX =
     </div>
 
 
-// 3./47 Add Comments in JSX
+// 3./47 -  Add Comments in JSX
 
 // JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code.
 // Like most programming languages, JSX has its own way to do this.
@@ -52,7 +52,7 @@ const JSX = (
 );
 
 
-// 4./47 Render HTML Elements to the DOM
+// 4./47 -  Render HTML Elements to the DOM
 const JSX = (
   <div>
     <h1>Hello World</h1>
@@ -64,7 +64,7 @@ const JSX = (
 ReactDOM.render(JSX, document.getElementById, ('challenge-node'));
 
 
-// 5./47  Define an HTML Class in JSX
+// 5./47 -   Define an HTML Class in JSX
 
 // TASK: Apply/Add a class of myDiv to the div provided in the JSX code.
 const JSX = (
@@ -74,7 +74,7 @@ const JSX = (
 );
 
 
-// 6./47 Learn About Self-Closing JSX Tags
+// 6./47 -  Learn About Self-Closing JSX Tags
 
 // TASK: Fix the errors in the code editor so that it is valid JSX and successfully transpiles.
 // Make sure you don't change any of the content - you only need to close tags where they are needed.
@@ -87,7 +87,7 @@ const JSX = (
 );
 
 
-// 7./47 Create a Stateless Functional Component
+// 7./47 -  Create a Stateless Functional Component
 
 // TASK: The code editor has a function called MyComponent.
 // Complete this function so it returns a single div element which contains some string of text.
@@ -104,7 +104,7 @@ const MyComponent = function() {
 }
 
 
-// 8./47 Create a React Component
+// 8./47 -  Create a React Component
 
 // TASK: MyComponent is defined in the code editor using class syntax.
 // Finish writing the render method so it returns a div element that contains an h1 with the text Hello React!.
@@ -126,7 +126,7 @@ class MyComponent extends React.Component {
 };
 
 
-// 9./47 Create a Component with Composition
+// 9./47 -  Create a Component with Composition
 
 // TASK: Compose the two together by rendering the ChildComponent within the ParentComponent.
 // Make sure to close the ChildComponent tag with a forward slash.
@@ -157,7 +157,7 @@ class ParentComponent extends React.Component {
 
 
 
-// 10./47 Use React to Render Nested Components
+// 10./47 -  Use React to Render Nested Components
 
 // TASK: 
 const TypesOfFruit = () => {
@@ -203,7 +203,7 @@ class TypesOfFood extends React.Component {
 
 
 
-// 11./47 Compose React Components
+// 11./47 -  Compose React Components
 
 // TASK: Nest two components inside of Fruits — first NonCitrus, and then Citrus.
 // Both of these components are provided for you behind the scenes.Next,
@@ -244,26 +244,51 @@ class TypesOfFood extends React.Component {
 };
 
 
-// 12./47
+// 12./47 -  Render a Class Component to the DOM
 
-// 13./47
+// TASK: Both the Fruits and Vegetables components are defined for you behind the scenes.
+// Render both components as children of the TypesOfFood component, then render TypesOfFood to the DOM.
+// There is a div with id = 'challenge-node' available for you to use.
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        {/* Change code below this line */}
+          <Fruits />
+          <Vegetables /> 
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+};
 
-// 14./47
+// Change code below this line
+ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));
 
-// 15./47
-// 16./47
-// 17./47
-// 18./47
-// 19./47
-// 20./47
-// 21./47
-// 22./47
-// 23./47
-// 24./47
-// 25./47
-// 26./47
-// 27./47
-// 28./47
-// 29./47
-// 30./47
-// 31./47
+
+
+// 13./47 - Write a React Component from Scratch
+
+// 14./47 - 
+
+// 15./47 - 
+// 16./47 - 
+// 17./47 - 
+// 18./47 - 
+// 19./47 - 
+// 20./47 - 
+// 21./47 - 
+// 22./47 - 
+// 23./47 - 
+// 24./47 - 
+// 25./47 - 
+// 26./47 - 
+// 27./47 - 
+// 28./47 - 
+// 29./47 - 
+// 30./47 - 
+// 31./47 - 
