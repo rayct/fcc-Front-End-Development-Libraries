@@ -218,7 +218,8 @@ class Fruits extends React.Component {
       <div>
         <h2>Fruits:</h2>
         { /* Change code below this line */ }
-
+        <NonCitrus /> {/* Nested Component 1 */}
+        <Citrus /> {/* Nested Components 2 */}
         { /* Change code above this line */ }
       </div>
     );
@@ -234,7 +235,7 @@ class TypesOfFood extends React.Component {
       <div>
         <h1>Types of Food:</h1>
         { /* Change code below this line */ }
-
+          <Fruits /> {/* Nested Component 3 */}
         { /* Change code above this line */ }
         <Vegetables />
       </div>
