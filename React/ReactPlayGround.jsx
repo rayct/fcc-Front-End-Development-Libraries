@@ -274,7 +274,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));
 
 // 13./47 - Write a React Component from Scratch
 
-// NOTES: Define a class MyComponent that extends React.Component.
+// TASK: Define a class MyComponent that extends React.Component.
 // Its render method should return a div that contains an h1 tag with the text: My First React Component! in it.
 // Use this text exactly, the case and punctuation matter.Make sure to call the constructor for your component, too.
 // Render this component to the DOM using ReactDOM.render().
@@ -295,7 +295,43 @@ ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
 
 
 
-// 14./47 - 
+// 14./47 - Pass Props to a Stateless Functional Component
+
+// TASK: There are Calendar and CurrentDate components in the code editor.
+// When rendering CurrentDate from the Calendar component,
+// pass in a property of date assigned to the current date from JavaScript's Date object.
+// Then access this prop in the CurrentDate component, showing its value within the p tags. 
+
+// NOTES: Note that for prop values to be evaluated as JavaScript,
+// they must be enclosed in curly brackets, for instance date = { Date() }. 
+const CurrentDate = (props) => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+      <p>The current date is: {props.date}</p>
+      { /* Change code above this line */ }
+    </div>
+  );
+};
+
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        <CurrentDate />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+
 // 15./47 - 
 // 16./47 - 
 // 17./47 - 
