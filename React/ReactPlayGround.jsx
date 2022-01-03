@@ -308,7 +308,7 @@ const CurrentDate = (props) => {
   return (
     <div>
       { /* Change code below this line */ }
-      <p>The current date is: {props.date}</p>
+      <p>The current date is: <br /> {props.date}</p>
       { /* Change code above this line */ }
     </div>
   );
@@ -323,7 +323,7 @@ class Calendar extends React.Component {
       <div>
         <h3>What date is it?</h3>
         { /* Change code below this line */ }
-        <CurrentDate />
+        <CurrentDate date={Date()}/>
         { /* Change code above this line */ }
       </div>
     );
@@ -332,7 +332,7 @@ class Calendar extends React.Component {
 
 
 
-// 15./47 - 
+// 15./47 - Pass an Array as Props
 // 16./47 - 
 // 17./47 - 
 // 18./47 - 
