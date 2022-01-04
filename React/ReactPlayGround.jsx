@@ -359,9 +359,9 @@ class ToDo extends React.Component {
         <h1>To Do Lists</h1>
         <h2>Today</h2>
         { /* Change code below this line */ }
-        <List {['Walk Dog', 'Workout', 'Sleep']} />
+        <List tasks={['Walk Dog', 'Workout', 'Sleep']} />
         <h2>Tomorrow</h2>
-        <List {['Finish Coding Website', 'Study React', ' More Coding', 'Swim']} />
+        <List tasks={['Finish Coding Website', 'Study React', ' More Coding', 'Swim']} />
         { /* Change code above this line */ }
       </div>
     );
