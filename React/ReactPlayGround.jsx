@@ -302,7 +302,8 @@ ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
 // pass in a property of date assigned to the current date from JavaScript's Date object.
 // Then access this prop in the CurrentDate component, showing its value within the p tags. 
 
-// NOTES: Note that for prop values to be evaluated as JavaScript,
+// NOTES: This challenge demonstrates how to pass information from a parent component to a child component as props or properties. 
+// Note that for prop values to be evaluated as JavaScript,
 // they must be enclosed in curly brackets, for instance date = { Date() }. 
 const CurrentDate = (props) => {
   return (
@@ -333,6 +334,42 @@ class Calendar extends React.Component {
 
 
 // 15./47 - Pass an Array as Props
+
+// TASK: There are List and ToDo components in the code editor. 
+// When rendering each List from the ToDo component, pass in a tasks property assigned to an array of to-do tasks,
+// for example["walk dog", "workout"].  Then access this tasks array in the List component,
+// showing its value within the p element. Use join(", ") to display the props.tasksarray in the p element as a comma separated list.
+// Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
+
+// NOTES: This challenge looks at how arrays can be passed as props.
+// To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.
+const List = (props) => {
+  { /* Change code below this line */ }
+  return <p>{props.tasks.join(", ")}</p>;
+  { /* Change code above this line */ }
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        { /* Change code below this line */ }
+        <List {['Walk Dog', 'Workout', 'Sleep']}/>
+        <h2>Tomorrow</h2>
+        <List {['Finish Coding Website', 'Study React', ' More Coding', 'Swim']} />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+
 // 16./47 - 
 // 17./47 - 
 // 18./47 - 
