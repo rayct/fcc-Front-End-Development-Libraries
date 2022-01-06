@@ -435,7 +435,7 @@ const Items = (props) => {
 };
 
 // Change code below this line
-
+Items.propTypes = { quantity: PropTypes.number.isRequired };
 // Change code above this line
 
 Items.defaultProps = {
@@ -453,8 +453,50 @@ class ShoppingCart extends React.Component {
 
 
 
+// 19./47 - Access Props Using this.props
 
-// 19./47 - 
+// TASK: Render an instance of the Welcome component in the parent component App.
+// Here, give Welcome a prop of name and assign it a value of a string.
+// Within the child, Welcome, access the name prop within the strong tags.
+
+// NOTES: Anytime you refer to a class component within itself, you use the this keyword.
+// To access props within a class component, you preface the code that you use to access it with this.
+// For example,if an ES6 class component has a prop called data, you write { this.props.data } in JSX.
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <Welcome />
+            { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          { /* Change code below this line */ }
+          <p>Hello, <strong></strong>!</p>
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+
+
+
 // 20./47 - 
 // 21./47 - 
 // 22./47 - 
