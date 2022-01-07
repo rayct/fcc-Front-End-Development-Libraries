@@ -497,7 +497,23 @@ class Welcome extends React.Component {
 
 
 
-// 20./47 - 
+// 20./47 - Review Using Props with Stateless Functional Components
+
+// TASK:
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+// Change code below this line 
+// NOTES: 
 // 21./47 - 
 // 22./47 - 
 // 23./47 - 
