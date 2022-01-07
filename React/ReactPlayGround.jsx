@@ -496,10 +496,10 @@ class Welcome extends React.Component {
 
 
 
-
 // 20./47 - Review Using Props with Stateless Functional Components
 
 // TASK:
+// NOTES: 
 class CampSite extends React.Component {
   constructor(props) {
     super(props);
@@ -513,7 +513,21 @@ class CampSite extends React.Component {
   }
 };
 // Change code below this line 
-// NOTES: 
+const Camper = (props) => {
+   return (
+     <div>
+       <p>{props.name}</p>
+     </div>
+   );
+};
+
+Camper.propTypes = {
+  name: PropTypes.string.isRequired
+};
+
+Camper.defaultProps = {
+  name: 'CamperBot'
+};
 // 21./47 - 
 // 22./47 - 
 // 23./47 - 
