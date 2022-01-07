@@ -471,7 +471,7 @@ class App extends React.Component {
     return (
         <div>
             { /* Change code below this line */ }
-            <Welcome />
+          <Welcome name='Raymond Turner' />
             { /* Change code above this line */ }
         </div>
     );
@@ -487,7 +487,7 @@ class Welcome extends React.Component {
     return (
         <div>
           { /* Change code below this line */ }
-          <p>Hello, <strong></strong>!</p>
+          <p>Hello, <strong>{this.props.name}</strong>!</p>
           { /* Change code above this line */ }
         </div>
     );
