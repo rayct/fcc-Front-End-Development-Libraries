@@ -558,21 +558,14 @@ Camper.defaultProps = {
 // A Component manages its own state internally, but—besides setting an initial state—has no business fiddling with the state of its children.
 // You could say the state is private. * We didn't say props are also serializable because it's pretty common to pass down callback functions through props.
 
-// TASK: 
+// TASK: There is a component in the code editor that is trying to render a name property from its state.
+// However, there is no state defined.Initialize the component with state in the constructor and assign your name to a property of name.
 
 class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     // Only change code below this line
-      render() {
-      return (
-        <div>
-          <h1>
-            name: 'string'
-          </h1>
-        </div>
-      )
-    }
+      this.state = {name}
     // Only change code above this line
   }
   render() {
