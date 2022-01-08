@@ -498,7 +498,10 @@ class Welcome extends React.Component {
 
 // 20./47 - Review Using Props with Stateless Functional Components
 
-// TASK:
+// TASK: The code editor has a CampSite component that renders a Camper component as a child.
+// Define the Camper component and assign it default props of { name: 'CamperBot' }.
+// Inside the Camper component, render any code that you want, but make sure to have one p element that includes only the name value that is passed in as a prop.
+// Finally, define propTypes on the Camper component to require name to be provided as a prop and verify that it is of type string.
 // NOTES: 
 class CampSite extends React.Component {
   constructor(props) {
@@ -528,7 +531,35 @@ Camper.propTypes = {
 Camper.defaultProps = {
   name: 'CamperBot'
 };
-// 21./47 - 
+
+
+
+// 21./47 - Create a Stateful Component
+
+// NOTES: You create state in a React component by declaring a state property on the component class in its constructor.
+// This initializes the component with state when it is created.
+// The state property must be set to a JavaScript object.Declaring it looks like this:
+// this.state = { }
+
+// TASK: 
+
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    // Only change code below this line
+
+    // Only change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
+// TASK: 
+// NOTES: 
 // 22./47 - 
 // 23./47 - 
 // 24./47 - 
