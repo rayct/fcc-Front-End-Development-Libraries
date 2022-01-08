@@ -541,13 +541,38 @@ Camper.defaultProps = {
 // The state property must be set to a JavaScript object.Declaring it looks like this:
 // this.state = { }
 
+// IMPORTANT: Props vs State = https://github.com/uberVU/react-guide/blob/master/props-vs-state.md
+// The main responsibility of a Component is to translate raw data into rich HTML.
+// With that in mind, the props and the state together constitute the raw data that the HTML output derives from.
+// You could say props + state is the input data for the render() function of a Component, so we need to zoom in and see what each data type represents and where does it come from.
+// Because we also use Cosmos = (https://github.com/skidding/cosmos) where props can contain an initial state, getting this straight is crucial.
+
+// Pros: 
+// props(short for properties) are a Component's configuration, its options if you may.
+// They are received from above and immutable as far as the Component receiving them is concerned.
+// A Component cannot change its props, but it is responsible for putting together the props of its child Components
+
+// State: 
+// The state starts with a default value when a Component mounts and then suffers from mutations in time (mostly generated from user events).
+// It's a serializable* representation of one point in time—a snapshot.
+// A Component manages its own state internally, but—besides setting an initial state—has no business fiddling with the state of its children.
+// You could say the state is private. * We didn't say props are also serializable because it's pretty common to pass down callback functions through props.
+
 // TASK: 
 
 class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     // Only change code below this line
-
+      render() {
+      return (
+        <div>
+          <h1>
+            name: 'string'
+          </h1>
+        </div>
+      )
+    }
     // Only change code above this line
   }
   render() {
