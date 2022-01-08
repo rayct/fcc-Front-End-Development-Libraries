@@ -565,7 +565,7 @@ class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     // Only change code below this line
-      this.state = {name}
+      this.state = {name: 'Ray'}
     // Only change code above this line
   }
   render() {
@@ -576,15 +576,72 @@ class StatefulComponent extends React.Component {
     );
   }
 };
+
+
+
+// 22./47 - 
+
 // TASK: 
 // NOTES: 
-// 22./47 - 
+
+
+
 // 23./47 - 
+// TASK: 
+// NOTES:
+
+
+
 // 24./47 - 
+
+// TASK: 
+// NOTES:
+
+
+
 // 25./47 - 
-// 26./47 - 
+
+// TASK: 
+// NOTES:
+
+
+
+// 26./47 -
+ 
+// TASK: 
+// NOTES:
+
+
+
 // 27./47 - 
-// 28./47 - 
-// 29./47 - 
+
+// TASK: 
+// NOTES:
+
+
+
+// 28./47 -
+ 
+// TASK: 
+// NOTES:
+
+
+
+// 29./47 -
+ 
+// TASK: 
+// NOTES:
+
+
+
 // 30./47 - 
+
+// TASK: 
+// NOTES:
+
+
+
 // 31./47 - 
+
+// TASK: 
+// NOTES:
