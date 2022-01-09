@@ -639,7 +639,19 @@ class MyComponent extends React.Component {
 // TASK: There is a button element in the code editor which has an onClick() handler.
 // This handler is triggered when the button receives a click event in the browser, and runs the handleClick method defined on MyComponent.
 // Within the handleClick method, update the component state using this.setState().Set the name property in state to equal the string React Rocks!.
-// NOTES:
+
+// NOTES: React provides a method for updating component state called setState.
+// You call the setState method within your component class like so: this.setState(), passing in an object with key - value pairs
+// The keys are your state properties and the values are the updated state data.For instance,
+// if we were storing a username in state and wanted to update it, it would look like this:
+// this.setState({
+//   name: 'Hello Ray'
+// })
+
+this.setState({
+  username: 'Lewis'
+});
+
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
