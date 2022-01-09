@@ -510,7 +510,7 @@ class CampSite extends React.Component {
   render() {
     return (
       <div>
-        <Camper/>
+        <Camper />
       </div>
     );
   }
@@ -579,16 +579,64 @@ class StatefulComponent extends React.Component {
 
 
 
-// 22./47 - 
+// 22./47 - Render State in the User Interface
 
-// TASK: 
-// NOTES: 
+// TASK:  Define an h1 tag in the component's render method which renders the value of name from the component's state.
+// NOTES: The h1 should only render the value from state and nothing else. In JSX, any code you write with curly braces { } will be treated as JavaScript.
+// So to access the value from state just enclose the reference in curly braces.
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+          <h1> {this.state.name} </h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
 
 
+// 23./47 - Render State in the User Interface Another Way
 
-// 23./47 - 
-// TASK: 
+// TASK: In the MyComponent render method, define a const called name and set it equal to the name value in the component's state.
+// Because you can write JavaScript directly in this part of the code, you don't have to enclose this reference in curly braces.
+// Next, in the return statement, render this value in an h1 tag using the variable name. Remember,
+// you need to use the JSX syntax(curly braces for JavaScript) in the return statement.
+
 // NOTES:
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    // Change code below this line
+      const Name = (props) => {
+      return (
+        <div>
+          <Name />
+        </div>
+      )
+    }
+    // Change code above this line
+    return (
+      <div>
+        { /* Change code below this line */ }
+          <h1>{this.state.name}</h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
 
 
 
