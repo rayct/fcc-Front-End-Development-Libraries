@@ -582,6 +582,7 @@ class StatefulComponent extends React.Component {
 // 22./47 - Render State in the User Interface
 
 // TASK:  Define an h1 tag in the component's render method which renders the value of name from the component's state.
+
 // NOTES: The h1 should only render the value from state and nothing else. In JSX, any code you write with curly braces { } will be treated as JavaScript.
 // So to access the value from state just enclose the reference in curly braces.
 class MyComponent extends React.Component {
@@ -678,17 +679,91 @@ class MyComponent extends React.Component {
 };
 
 
-// 25./47 - 
+// 25./47 - Bind 'this' to a Class Method
 
-// TASK: 
-// NOTES:
+// TASK: The code editor has a component with a state that keeps track of the text.
+// It also has a method which allows you to set the text to You clicked!.
+// However, the method doesn't work because it's using the this keyword that is undefined.
+// Fix it by explicitly binding this to the handleClick() method in the component's constructor.
+// Next, add a click handler to the button element in the render method.
+// It should trigger the handleClick() method when the button receives a click event.
+// Remember that the method you pass to the onClick handler needs curly braces because it should be interpreted directly as JavaScript.
+// Once you complete the above steps you should be able to click the button and see You clicked!.
+
+// NOTES: The this keyword is one of the most confusing aspects of JavaScript but it plays an important role in React.
+// Although its behavior here is totally normal, these lessons aren't the place for an in-depth review of this so please refer to other lessons if the above is confusing!
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+      this.handleClick = this.handleClick.bind(this);
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button onClick={this.handleClick}>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
 
 
 
-// 26./47 -
+// 26./47 - Use State to Toggle an Element
  
 // TASK: 
 // NOTES:
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+
+    // Change code below this line
+      this.toggleVisibility = this.toggleVisibility.bind(this);
+    // Change code above this line
+
+  }
+  
+    // Change code below this line
+      toggleVisibility() {
+    this.setState(state => ({
+      visibility: !state.visibility
+    }));
+  }
+    // Change code above this line
+  
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
 
 
 
