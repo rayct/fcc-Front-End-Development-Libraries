@@ -741,8 +741,8 @@ class MyComponent extends React.Component {
   
     // Change code below this line
       toggleVisibility() {
-    this.setState(state => ({
-      visibility: !state.visibility
+        this.setState(state => ({
+          visibility: !state.visibility
     }));
   }
     // Change code above this line
@@ -767,17 +767,95 @@ class MyComponent extends React.Component {
 
 
 
-// 27./47 - 
+// 27./47 - Write a Simple Counter
 
-// TASK: 
-// NOTES:
+// TASK: // Write these methods so the counter value is incremented or decremented by 1 when the appropriate button is clicked.
+// Also, create a reset() method so when the reset button is clicked, the count is set to 0.
+
+// NOTES: Make sure you don't modify the classNames of the buttons.
+// Also, remember to add the necessary bindings for the newly - created methods in the constructor.
+// You can design a more complex stateful component by combining the concepts covered so far.
+// These include initializing state, writing methods that set state, and assigning click handlers to trigger these methods.
+// The Counter component keeps track of a count value in state.
+// There are two buttons which call methods increment() and decrement().
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    // Change code below this line
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+    this.reset = this.reset.bind(this);
+    // Change code above this line
+  }
+  // Change code below this line
+    reset() {
+    this.setState({
+      count: 0
+    });
+  }
+  increment() {
+    this.setState(state => ({
+      count: state.count + 1
+    }));
+  }
+  decrement() {
+    this.setState(state => ({
+      count: state.count - 1
+    }));
+  }
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
+      </div>
+    );
+  }
+};
 
 
 
-// 28./47 -
+// 28./47 - Create a Controlled Input
  
 // TASK: 
-// NOTES:
+// NOTES: 
+class ControlledInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    
+    // Change code below this line
+    this.handleChange = this.handleChange.bind(this);
+    // Change code above this line
+  }
+
+  // Change code below this line
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+  })
+}
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */}
+        <input value={this.state.input} onChange={this.handleChange} /> {/*Input Value*/}
+        { /* Change code above this line */}
+        <h4>Controlled Input:</h4>
+        <p>{this.state.input}</p>
+      </div>
+    );
+  }
+};
 
 
 
