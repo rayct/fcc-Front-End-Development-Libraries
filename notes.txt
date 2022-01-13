@@ -4,3 +4,11 @@ React Course Progress Update: - /47
 
 i(wz%A,&3pLb
 3nkh;xvfZ(Eu_AoN\287
+1. HTML/CSS
+2. JS => React
+3. Python
+4. Java
+5. GoLang
+6. Rust
+7. C/C++/C#
+8. Swift/Kotlin

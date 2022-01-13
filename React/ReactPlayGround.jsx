@@ -831,7 +831,7 @@ class ControlledInput extends React.Component {
     this.state = {
       input: ''
     };
-    
+
     // Change code below this line
     this.handleChange = this.handleChange.bind(this);
     // Change code above this line
@@ -849,8 +849,9 @@ class ControlledInput extends React.Component {
       <div>
         { /* Change code below this line */}
         <input value={this.state.input} onChange={this.handleChange} /> {/*Input Value*/}
-        { /* Change code above this line */}
+        { /* Change code above this line */} 
         <h4>Controlled Input:</h4>
+        {/* <h2>{this.state.input}</h2> */}
         <p>{this.state.input}</p>
       </div>
     );
