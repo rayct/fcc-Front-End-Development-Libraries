@@ -866,6 +866,7 @@ class ControlledInput extends React.Component {
 // NOTES: You also must call event.preventDefault() in the submit handler, to prevent the default form submit behavior which will refresh the web page.
 // For camper convenience, the default behavior has been disabled here to prevent refreshes from resetting challenge code.
 // event.preventDefaut(); => is used because we are using a Front End Framework
+
 // SOLUTION 1
 class MyForm extends React.Component {
   constructor(props) {
