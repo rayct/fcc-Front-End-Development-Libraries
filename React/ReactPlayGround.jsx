@@ -860,10 +860,47 @@ class ControlledInput extends React.Component {
 
 
 
-// 29./47 -
+// 29./47 - Create a Controlled Form
  
 // TASK: 
-// NOTES:
+// NOTES: You also must call event.preventDefault() in the submit handler, to prevent the default form submit behavior which will refresh the web page.
+// For camper convenience, the default behavior has been disabled here to prevent refreshes from resetting challenge code.
+class MyForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      submit: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  handleSubmit(event) {
+    // Change code below this line
+
+    // Change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          {/* Change code below this line */}
+      <input value={this.state.input} onChange={this.handleChange} /> {/*Input Value*/}
+          {/* Change code above this line */}
+          <button type='submit'>Submit!</button>
+        </form>
+        {/* Change code below this line */}
+
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+}
 
 
 
