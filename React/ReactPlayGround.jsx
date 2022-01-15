@@ -946,7 +946,10 @@ class MyForm extends React.Component {
 
 
 // 30./47 - Pass State as Props to Child Components
-// TASK: 
+// TASK: The MyApp component is stateful and renders a Navbar component as a child.
+// Pass the name property in its state down to the child component,
+// then show the name in the h1 tag that's part of the Navbar render method.
+// name should appear after the text Hello, my name is:.
 // NOTES:
 class MyApp extends React.Component {
   constructor(props) {
@@ -959,7 +962,7 @@ class MyApp extends React.Component {
     return (
        <div>
          {/* Change code below this line */}
-         <Navbar />
+         <Navbar name={this.state.name}/>
          {/* Change code above this line */}
        </div>
     );
@@ -974,13 +977,73 @@ class Navbar extends React.Component {
     return (
     <div>
       {/* Change code below this line */}
-      <h1>Hello, my name is: </h1>
+      <h1>Hello, my name is: {this.props.name}</h1>
       {/* Change code above this line */}
     </div>
     );
   }
 };
 
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 31./47 - 
+
+// TASK: 
+// NOTES:
 
 
 // 31./47 - 
