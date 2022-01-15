@@ -992,61 +992,97 @@ class Navbar extends React.Component {
 // NOTES:
 
 
-// 31./47 - 
+// 32./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 33./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 34./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 35./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 36./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 37./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 38./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 39./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 40./47 - 
 
 // TASK: 
 // NOTES:
 
 
-// 31./47 - 
+// 41./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 42./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 43./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 44./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 45./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 46./47 - 
+
+// TASK: 
+// NOTES:
+
+
+// 47./47 - 
 
 // TASK: 
 // NOTES:
