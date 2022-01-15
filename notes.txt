@@ -4,11 +4,14 @@ React Course Progress Update: - /47
 
 i(wz%A,&3pLb
 3nkh;xvfZ(Eu_AoN\287
+
+My Programming Learning Goals 2022
 1. HTML/CSS
 2. JS => React
 3. Python
-4. Java
-5. GoLang
-6. Rust
-7. C/C++/C#
-8. Swift/Kotlin
+4. C
+5. Java
+6. GoLang
+7. Rust
+8. C++/C#
+9. Swift/Kotlin
