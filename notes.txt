@@ -9,7 +9,7 @@ My Programming Learning Goals 2022
 1. HTML/CSS
 2. JS => React
 3. Python
-4. C
+4. C/C++/C#
 5. Java
 6. GoLang
 7. Rust

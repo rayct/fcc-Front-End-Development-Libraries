@@ -1006,8 +1006,11 @@ class MyApp extends React.Component {
   render() {
     return (
        <div>
-        { /* Change code below this line */ }
-          <GetInput name={this.state.name}/>
+        { /* Change code below this line */}
+        <GetInput value={this.state.inputValue} />
+        <RenderInput value={this.state.}
+        {/*<input value={this.state.input} onChange={this.handleChange} />*/} {/*Input Value*/}
+
         { /* Change code above this line */ }
        </div>
     );
