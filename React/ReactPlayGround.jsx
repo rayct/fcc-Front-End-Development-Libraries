@@ -1135,7 +1135,7 @@ class MyComponent extends React.Component {
   // Change code below this line
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyPress)
-    console.log('Ray');
+    console.log('Ray');35
 
   }
   componentWillUnmount() {
@@ -1153,7 +1153,7 @@ class MyComponent extends React.Component {
     }
   }
   render() {
-    return (
+    return
       <div>
         <h1>{this.state.message}</h1>
       </div>
