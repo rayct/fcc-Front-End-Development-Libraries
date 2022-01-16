@@ -1074,8 +1074,18 @@ class MyComponent extends React.Component {
 
 // 33./47 - Use the Lifecycle Method componentDidMount
 
-// TASK: 
-// NOTES:
+// TASK: There is a mock API call in componentDidMount().
+// It sets state after 2.5 seconds to simulate calling a server to retrieve data.
+// This example requests the current total active users for a site.In the render method,
+// render the value of activeUsers in the h1 after the text Active Users:.Watch what happens in the preview,
+// and feel free to change the timeout to see the different effects.
+
+// NOTES: Most web developers, at some point, need to call an API endpoint to retrieve data.
+// If you're working with React, it's important to know where to perform this action.
+// The best practice with React is to place API calls or any calls to your server in the lifecycle method componentDidMount().
+// This method is called after a component is mounted to the DOM.Any calls to setState() here will trigger a re - rendering of your component.
+// When you call an API in this method, and set your state with the data that the API returns,
+// it will automatically trigger an update once you receive the data.
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -1094,7 +1104,7 @@ class MyComponent extends React.Component {
     return (
       <div>
         {/* Change code below this line */}
-        <h1>Active Users: </h1>
+        <h1>Active Users: {this.state.activeUsers}</h1>
         {/* Change code above this line */}
       </div>
     );
@@ -1102,10 +1112,45 @@ class MyComponent extends React.Component {
 }
 
 
-// 34./47 - 
+// 34./47 - Add Event Listeners
 
 // TASK: 
 // NOTES:
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  // Change code below this line
+  componentDidMount() {
+
+  }
+  componentWillUnmount() {
+
+  }
+  // Change code above this line
+  handleEnter() {
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
 
 
 // 35./47 - 
