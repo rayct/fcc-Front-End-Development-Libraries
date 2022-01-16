@@ -988,8 +988,15 @@ class Navbar extends React.Component {
 
 // 31./47 - Pass a Callback as Props
 
-// TASK: 
-// NOTES:
+// TASK: 1. Add the GetInput component to the render method in MyApp, then pass it a prop called input assigned to inputValue from MyApp's state.
+// Also create a prop called handleChange and pass the input handler handleChange to it.
+
+// TASK 2. Next, add RenderInput to the render method in MyApp, then create a prop called input and pass the inputValue from state to it.
+// Once you are finished you will be able to type in the input field in the GetInput component, which then calls the handler method in its parent via props.
+// This updates the input in the state of the parent, which is passed as props to both children.
+// Observe how the data flows between the components and how the single source of truth remains the state of the parent component.
+
+// NOTES: Admittedly, this example is a bit contrived, but should serve to illustrate how data and callbacks can be passed between React components.
 class MyApp extends React.Component {
   constructor(props) {
     super(props);
@@ -1008,10 +1015,7 @@ class MyApp extends React.Component {
        <div>
         { /* Change code below this line */}
         <GetInput input={this.state.inputValue} handleChange={this.handleChange}/> {/*CORRECT*/}
-        <RenderInput value={this.state.value} onChange={this.handleChange} />
-        
-        <input value={this.state.input} onChange={this.handleChange} /> {/*Input Value*/}
-
+        <RenderInput input={this.state.inputValue} handleChange={this.handleChange} /> {/*CORRECT*/}
         { /* Change code above this line */ }
        </div>
     );
