@@ -1007,16 +1007,17 @@ class MyApp extends React.Component {
     return (
        <div>
         { /* Change code below this line */}
-        <GetInput value={this.state.inputValue} />
-        <RenderInput value={this.state.}
-        {/*<input value={this.state.input} onChange={this.handleChange} />*/} {/*Input Value*/}
+        <GetInput input={this.state.inputValue} handleChange={this.handleChange}/> {/*CORRECT*/}
+        <RenderInput value={this.state.value} onChange={this.handleChange} />
+        
+        <input value={this.state.input} onChange={this.handleChange} /> {/*Input Value*/}
 
         { /* Change code above this line */ }
        </div>
     );
   }
 };
-
+// COMPONENT 1
 class GetInput extends React.Component {
   constructor(props) {
     super(props);
@@ -1032,7 +1033,7 @@ class GetInput extends React.Component {
     );
   }
 };
-
+// COMPONENT 2
 class RenderInput extends React.Component {
   constructor(props) {
     super(props);

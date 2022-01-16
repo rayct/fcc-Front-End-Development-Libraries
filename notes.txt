@@ -7,11 +7,16 @@ i(wz%A,&3pLb
 
 My Programming Learning Goals 2022
 1. HTML/CSS
-2. JS => React
+2. React
 3. Python
-4. C/C++/C#
 5. Java
-6. GoLang
+6. Go
+4. C#
 7. Rust
-8. C++/C#
+8. C/C++
 9. Swift/Kotlin
+10. JavaScript
+11. PHP
+12. R
+
+MyMac Access Tokens: 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
