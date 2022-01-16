@@ -1053,16 +1053,53 @@ class RenderInput extends React.Component {
 };
 
 
-// 32./47 - 
+// 32./47 - Use the Lifecycle Method componentWillMount
+
+// TASK: 
+// NOTES: The componentWillMount Lifecycle method will be deprecated in a future version of 16.X and removed in version 17.
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    // Change code below this line
+      console.log('What I am I seeing here..?')
+    // Change code above this line
+  }
+  render() {
+    return <div />
+  }
+};
+
+
+// 33./47 - Use the Lifecycle Method componentDidMount
 
 // TASK: 
 // NOTES:
-
-
-// 33./47 - 
-
-// TASK: 
-// NOTES:
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeUsers: null
+    };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        activeUsers: 1273
+      });
+    }, 2500);
+  }
+  render() {
+    return (
+      <div>
+        {/* Change code below this line */}
+        <h1>Active Users: </h1>
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+}
 
 
 // 34./47 - 
