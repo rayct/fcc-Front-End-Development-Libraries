@@ -1208,13 +1208,13 @@ class Controller extends React.Component {
 }
 
 
-// 36./47 - 
+// 36./47 - Introducing Inline Styles
 
 // TASK: 
 // NOTES:
 
 
-// 37./47 - 
+// 37./47 - Add Inline Styles in React
 
 // TASK: 
 // NOTES:
