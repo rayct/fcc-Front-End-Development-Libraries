@@ -1165,15 +1165,28 @@ class MyComponent extends React.Component {
 // 35./47 - Optimize Re-Renders with shouldComponentUpdate
 
 // TASK: 
-// NOTES:
+// NOTES: The shouldComponentUpdate() method is added in a component called OnlyEvens.
+// Currently, this method returns true so OnlyEvens re - renders every time it receives new props.
+// Modify the method so OnlyEvens updates only if the value of its new props is even.
+// Click the Add button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
 class OnlyEvens extends React.Component {
   constructor(props) {
     super(props);
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log('Should I update?');
-    // Change code below this line
-    return true;
+    // Change code below this
+
+    // SOLUTION 1:
+    // return nextProps.value % 2 === 0;
+
+    // SOLUTION 2: Boolean Method Function
+    if (nextProps.value % 2 === 0) {
+        return true;
+        } else {
+        return false;
+    }
+    
     // Change code above this line
   }
   componentDidUpdate() {
@@ -1183,7 +1196,6 @@ class OnlyEvens extends React.Component {
     return <h1>{this.props.value}</h1>;
   }
 }
-
 class Controller extends React.Component {
   constructor(props) {
     super(props);
