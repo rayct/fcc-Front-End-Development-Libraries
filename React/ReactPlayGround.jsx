@@ -1074,13 +1074,15 @@ class MyComponent extends React.Component {
 
 // 33./47 - Use the Lifecycle Method componentDidMount
 
-// TASK: There is a mock API call in componentDidMount().
+// TASK:
+// There is a mock API call in componentDidMount().
 // It sets state after 2.5 seconds to simulate calling a server to retrieve data.
 // This example requests the current total active users for a site.In the render method,
 // render the value of activeUsers in the h1 after the text Active Users:.Watch what happens in the preview,
 // and feel free to change the timeout to see the different effects.
 
-// NOTES: Most web developers, at some point, need to call an API endpoint to retrieve data.
+// NOTES:
+// Most web developers, at some point, need to call an API endpoint to retrieve data.
 // If you're working with React, it's important to know where to perform this action.
 // The best practice with React is to place API calls or any calls to your server in the lifecycle method componentDidMount().
 // This method is called after a component is mounted to the DOM.Any calls to setState() here will trigger a re - rendering of your component.
@@ -1301,7 +1303,7 @@ class Colorful extends React.Component {
 
 // 46./47 - 
 
-// TASK: 
+// TASK:  
 // NOTES:
 
 
