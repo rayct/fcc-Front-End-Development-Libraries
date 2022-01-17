@@ -1114,10 +1114,12 @@ class MyComponent extends React.Component {
 
 // 34./47 - Add Event Listeners
 
-// TASK 1: Attach an event listener in the componentDidMount() method for keydown events and have these events trigger the callback handleKeyPress().
+// TASK 1: 
+// Attach an event listener in the componentDidMount() method for keydown events and have these events trigger the callback handleKeyPress().
 // You can use document.addEventListener() which takes the event(in quotes) as the first argument and the callback as the second argument.
 
-// TASK 2: Then, in componentWillUnmount(), remove this same event listener.
+// TASK 2: 
+// Then, in componentWillUnmount(), remove this same event listener.
 // You can pass the same arguments to document.removeEventListener().
 // It's good practice to use this lifecycle method to do any clean up on React components before they are unmounted and destroyed.
 // Removing event listeners is an example of one such clean up action.
@@ -1165,7 +1167,8 @@ class MyComponent extends React.Component {
 // 35./47 - Optimize Re-Renders with shouldComponentUpdate
 
 // TASK: 
-// NOTES: The shouldComponentUpdate() method is added in a component called OnlyEvens.
+// NOTES:
+// The shouldComponentUpdate() method is added in a component called OnlyEvens.
 // Currently, this method returns true so OnlyEvens re - renders every time it receives new props.
 // Modify the method so OnlyEvens updates only if the value of its new props is even.
 // Click the Add button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
@@ -1223,7 +1226,23 @@ class Controller extends React.Component {
 // 36./47 - Introducing Inline Styles
 
 // TASK: 
+// Add a style attribute to the div in the code editor to give the text a color of red and font size of 72px.
+// Note that you can optionally set the font size to be a number, omitting the units px, or write it as 72px.
 // NOTES:
+// You apply inline styles to JSX elements similar to how you do it in HTML, but with a few JSX differences.
+// Here's an example of an inline style in HTML:
+// JSX elements use the style attribute, but because of the way JSX is transpiled, you can't set the value to a string.
+// Instead, you set it equal to a JavaScript object.
+class Colorful extends React.Component {
+  render() {
+    return (
+      // Solution: 1
+      <div style={{ color: 'red', fontSize: 72}}>Big Red 72px</div>
+      // Optional Solution: 2
+      // <div style={{color: 'red', fontSize: '72px'}}>Big Red 72px</div>
+    );
+  }
+};
 
 
 // 37./47 - Add Inline Styles in React
