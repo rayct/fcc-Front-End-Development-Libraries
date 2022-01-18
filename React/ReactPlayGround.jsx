@@ -1250,64 +1250,106 @@ class Colorful extends React.Component {
 // 37./47 - Add Inline Styles in React
 
 // TASK: 
+//  Declare your styles constant as a global variable at the top of the file.
+// Initialize styles constant and assign an object with three style properties and their values to it.
+// Give the div a color of purple, a font - size of 40, and a border of 2px solid purple.
+// Then set the style attribute equal to the styles constant.
 // NOTES:
+// All property value length units (like height, width, and fontSize) are assumed to be in px unless otherwise specified.
+// If you want to use em, for example, you wrap the value and the units in quotes, like { fontSize: "4em" }.
+// Other than the length values that default to px, all other property values should be wrapped in quotes.
+const styles = {
+  color: 'purple',
+  fontSize: 40,
+  border: '2px solid purple',
+}
+// Change code above this line
+class Colorful extends React.Component {
+  render() {
+    // Change code below this line
+    return (
+      <div style={styles}>Style Me!</div>
+    );
+    // Change code above this line
+  }
+};
 
 
 // 38./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 39./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 40./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 41./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 42./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 43./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 44./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 45./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
 
 
 // 46./47 - 
 
-// TASK:  
+// TASK:
+// 
 // NOTES:
+// 
 
 
 // 47./47 - 
 
-// TASK: 
+// TASK:
+//  
 // NOTES:
+// 
