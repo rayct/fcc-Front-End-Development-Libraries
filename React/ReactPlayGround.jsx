@@ -1412,7 +1412,8 @@ class MyComponent extends React.Component {
   }
   toggleDisplay() {
     this.setState(state => ({
-      display: !state.display
+      // Code Below sets the condition to 'false' (when button is clicked) using the ! <= logical not operator
+      display: !state.display 
     }));
   }
   render() {
@@ -1420,7 +1421,7 @@ class MyComponent extends React.Component {
     return (
        <div>
          <button onClick={this.toggleDisplay}>Toggle Display</button>
-        {this.state.display && <h1>Displayed!</h1>} {/* <= Solution */}
+        {this.state.display && <h1>Displayed!</h1>} {/* <= Solution using the (&&) logical and operator*/}
        </div>
     );
   }
