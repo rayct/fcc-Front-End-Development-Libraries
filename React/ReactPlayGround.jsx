@@ -1492,7 +1492,7 @@ class CheckUserAge extends React.Component {
           ? buttonOne
           : this.state.userAge < 18  
           ? buttonThree
-          : buttonTwo} // Using a Nested Ternary Operator
+          : buttonTwo} {/* Using a Nested Ternary Operator */}
       
         // Solution 2
         {this.state.userAge === ''
