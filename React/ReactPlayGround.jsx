@@ -1512,18 +1512,19 @@ class CheckUserAge extends React.Component {
 // TASK:
 //  
 // NOTES:
-// 
+//
+// Child Conponent 
 class Results extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
     {/* Change code below this line */}
-    return <h1></h1>;
+    return <h1>{this.props.fiftyFifty ? 'You Win!' : 'You Loose!'}</h1>;
     {/* Change code above this line */}
   }
 }
-
+// Parent Component
 class GameOfChance extends React.Component {
   constructor(props) {
     super(props);
@@ -1536,17 +1537,18 @@ class GameOfChance extends React.Component {
     this.setState(prevState => {
       // Complete the return statement:
       return {
-        counter: prevState
+        counter: this.state.counter + 1
+
       }
     });
   }
   render() {
-    const expression = null; // Change this line
+    const expression = Math.random() >= .5; // Change this line
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>
         {/* Change code below this line */}
-
+        <Results fiftyFifty={expression}/>
         {/* Change code above this line */}
         <p>{'Turn: ' + this.state.counter}</p>
       </div>
