@@ -1556,6 +1556,8 @@ class GameOfChance extends React.Component {
   }
 }
 
+
+
 // 43./47 - Change Inline CSS Conditionally Based on Component State
 
 // TASK:
@@ -1598,6 +1600,8 @@ class GateKeeper extends React.Component {
     );
   }
 };
+
+
 
 // 44./47 - Use Array.map() to Dynamically Render Elements
 
@@ -1663,21 +1667,96 @@ class MyToDoList extends React.Component {
   }
 }
 
-// 45./47 - 
 
-// TASK:
+
+// 45./47 - Give Sibling Elements a Unique Key Attribute
+
+// TASK: 
+// The code editor has an array with some front end frameworks and a stateless functional component named Frameworks().Frameworks() 
+// needs to map the array to an unordered list, much like in the last challenge.
+// Finish writing the map callback to return an li element for each framework in the frontEndFrameworks array.
+// This time, make sure to give each li a key attribute, set to a unique value.
+// The li elements should also contain text from frontEndFrameworks.
 //  
-// NOTES:
-// 
+// NOTES: 
+// Normally, you want to make the key something that uniquely identifies the element being rendered. 
+// As a last resort the array index may be used, but typically you should try to use a unique identification.
+const frontEndFrameworks = [
+  'React',
+  'Angular',
+  'Ember',
+  'Knockout',
+  'Backbone',
+  'Vue'
+];
+
+function Frameworks() {
+  const renderFrameworks = frontEndFrameworks.map(function (element, e) { <li key={e}>{element}</li> }); // Solution 1
+  const renderFrameworks = frontEndFrameworks.map((fw, i) => <li key={i}>{fw}</li>); // Solution 2
+  const renderFrameworks = frontEndFrameworks.map((element, e) => {
+    return <li key={e}>{element}</li>;
+  }); // Solution 3
+  return (
+    <div>
+      <h1>Popular Front End JavaScript Frameworks</h1>
+      <ul>
+        {renderFrameworks}
+      </ul>
+    </div>
+  );
+};
 
 
-// 46./47 - 
+
+// 46./47 - Use Array.filter() to Dynamically Filter an Array
 
 // TASK:
 // 
 // NOTES:
 // 
-
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [
+        {
+          username: 'Jeff',
+          online: true
+        },
+        {
+          username: 'Alan',
+          online: false
+        },
+        {
+          username: 'Mary',
+          online: true
+        },
+        {
+          username: 'Jim',
+          online: false
+        },
+        {
+          username: 'Sara',
+          online: true
+        },
+        {
+          username: 'Laura',
+          online: true
+        }
+      ]
+    };
+  }
+  render() {
+    const usersOnline = null; // Change this line
+    const renderOnline = null; // Change this line
+    return (
+      <div>
+        <h1>Current Online Users:</h1>
+        <ul>{renderOnline}</ul>
+      </div>
+    );
+  }
+}
 
 // 47./47 - 
 
