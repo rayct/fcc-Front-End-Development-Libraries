@@ -1801,5 +1801,5 @@ class App extends React.Component {
     return <div/>
   }
 };
-
 // Change code below this line
+ReactDOMServer.renderToString(<App/>);
