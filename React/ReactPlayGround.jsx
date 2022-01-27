@@ -1813,4 +1813,7 @@ class App extends React.Component {
   }
 };
 // Change code below this line
-ReactDOMServer.renderToString(<App/>);
+ReactDOMServer.renderToString(<App/>); // <= Passed in as a JSX element
+
+
+// Completed Thur
