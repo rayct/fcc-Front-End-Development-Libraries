@@ -1758,7 +1758,7 @@ class MyComponent extends React.Component {
   }
   render() {
 
-    // Solution 1
+    // Solution 1 - ES6
     const usersOnline = this.state.users.filter(user => {
       return user.online
       }); // Change this line
@@ -1766,7 +1766,15 @@ class MyComponent extends React.Component {
       return <li key={user.username}>{user.username}</li>;
     }); // Change this line
 
-    // Solution 1
+    // Solution 2
+    const usersOnline = this.state.users.filter(function(user) {
+      if (user.online) {
+        return user;
+      }
+    }); // Change this line
+    const renderOnline = usersOnline.map(function(element) {
+      return <li key={element.username}>{element.username}</li>
+    }); // Change this line
     return (
       <div>
         <h1>Current Online Users:</h1>
@@ -1776,12 +1784,15 @@ class MyComponent extends React.Component {
   }
 }
 
+
+
 // 47./47 - Render React on the Server with renderToString
 
 // TASK:
 //  
 // NOTES:
-//
+// The renderToString() method is provided on ReactDOMServer, which is available here as a global object.
+// The method takes one argument which is a React element.Use this to render App to a string.
 class App extends React.Component {
   constructor(props) {
     super(props);
