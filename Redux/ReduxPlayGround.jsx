@@ -91,7 +91,6 @@ let actionCreator = function (task) {
 
 
 
-
 // Redux Course:  5/17 - Dispatch an Action Event
 // Notes: 
 // dispatch method is what you use to dispatch actions to the Redux store. 
@@ -205,12 +204,50 @@ const logoutUser = () => {
 
 
 
-// Redux Course:  8/17 - 
+// Redux Course:  8/17 - Use const for Action Types
 // Notes: 
 // 
 
 // Task: 
 //
+
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+
+  switch (action.type) {
+    case 'LOGIN': 
+      return {
+        authenticated: true
+      }
+    case 'LOGOUT': 
+      return {
+        authenticated: false
+      }
+
+    default:
+      return state;
+
+  }
+
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
 
 
 
