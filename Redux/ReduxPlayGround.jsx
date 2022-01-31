@@ -92,30 +92,116 @@ let actionCreator = function (task) {
 
 
 
-// Redux Course:  5/17 - 
+// Redux Course:  5/17 - Dispatch an Action Event
+// Notes: 
+// dispatch method is what you use to dispatch actions to the Redux store. 
+// Calling store.dispatch() and passing the value returned from an action creator sends an action back to the store.
+// Recall that action creators return an object with a type property that specifies the action that has occurred.
+// Then the method dispatches an action object to the Redux store.
+// Based on the previous challenge's example, the following lines are equivalent, and both dispatch the action of type LOGIN:
+ 
+
+// Task: 
+// The Redux store in the code editor has an initialized state that's an object containing a login property currently set to false.
+// There's also an action creator called loginAction() which returns an action of type LOGIN. 
+// Dispatch the LOGIN action to the Redux store by calling the dispatch method, and pass in the action created by loginAction().
+
+const store = Redux.createStore(
+  (state = {login: false}) => state
+);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+// Dispatch the action here:
+store.dispatch(loginAction());
+
+
+
+// Redux Course:  6/17 - Handle an Action in the Store
 // Notes: 
 // 
 
 // Task: 
 // 
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+  if (action.type === "LOGIN") {
+    return { login: true };
+  } else {
+    return state;
+    
+    // Solution 2
+    // } else {
+      return { login: false };
+  }
+  // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
 
 
 
-// Redux Course:  6/17 - 
+// Redux Course:  7/17 - Use a Switch Statement to Handle Multiple Actions
 // Notes: 
 // 
 
 // Task: 
-// 
+// Fill in the reducer function to handle multiple authentication actions.
+// Use a JavaScript switch statement in the reducer to respond to different action events.
+// This is a standard pattern in writing Redux reducers.
+// The switch statement should switch over action.type and return the appropriate authentication state.
 
+const defaultState = { // <= A single state object with the property authenticated
+  authenticated: false
+};
 
+const authReducer = (state = defaultState, action) => {
+  // Change code below this line
+  // JavaScript switch statement in the reducer to respond to different action events.
+  switch (action.type) {
+    case "LOGIN":
+      return {
+        authenticated: true
+      }
+    case "LOGOUT":
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }
+  // Change code above this line
+};
 
-// Redux Course:  7/17 - 
-// Notes: 
-// 
+const store = Redux.createStore(authReducer); // <= The Action creator
 
-// Task: 
-// 
+// Below are the Action Objects
+// Action Object 1
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+// Action Object 2
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
 
 
 
