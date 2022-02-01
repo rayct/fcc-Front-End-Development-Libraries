@@ -206,12 +206,18 @@ const logoutUser = () => {
 
 // Redux Course:  8/17 - Use const for Action Types
 // Notes: 
-// 
+// A common practice when working with Redux is to assign action types as read-only constants, then reference these constants wherever they are used.
+// You can refactor the code you're working with to write the action types as const declarations.
+// It's generally a convention to write constants in all uppercase, and this is standard practice in Redux as well.
+// It is good practice to declare your Constants/VARS first and then you can use them multiple times. When a change is needed
+// you only have to change the const's when needed.
 
 // Task: 
-//
+// Declare LOGIN and LOGOUT as const values and assign them to the strings 'LOGIN' and 'LOGOUT', respectively.
+// Then, edit the authReducer() and the action creators to reference these constants instead of string values.
 
-
+const LOGIN = 'LOGOUT';
+const LOGOUT = 'LOGOUT';
 const defaultState = {
   authenticated: false
 };
@@ -219,7 +225,7 @@ const defaultState = {
 const authReducer = (state = defaultState, action) => {
 
   switch (action.type) {
-    case 'LOGIN': 
+    case LOGIN:
       return {
         authenticated: true
       }
@@ -239,19 +245,19 @@ const store = Redux.createStore(authReducer);
 
 const loginUser = () => {
   return {
-    type: 'LOGIN'
+    type: LOGIN
   }
 };
 
 const logoutUser = () => {
   return {
-    type: 'LOGOUT'
+    type: LOGOUT
   }
 };
 
 
 
-// Redux Course:  9/17 - 
+// Redux Course:  9/17 - Register a Store Listener
 // Notes: 
 // 
 
