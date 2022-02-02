@@ -286,7 +286,15 @@ const store = Redux.createStore(reducer);
 let count = 0;
 
 // Change code below this line
+// Solution 1
+store.subscribe(() => {  // <= Callback Function 1
+  count += 1;
+});
 
+// Solution 2
+store.subscribe(() => { // <= Callback Function 2
+  count++;
+});
 
 // Change code above this line
 
