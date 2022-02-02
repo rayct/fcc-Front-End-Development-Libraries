@@ -307,21 +307,84 @@ console.log(count);
 
 
 
-// Redux Course:  10/17 - 
+// Redux Course:  10/17 - Combine Multiple Reducers
+// Notes: 
+// 
+
+// Task: 
+// There are counterReducer() and authReducer() functions provided in the code editor, along with a Redux store.
+// Finish writing the rootReducer() function using the Redux.combineReducers() method.
+// Assign counterReducer to a key called count and authReducer to a key called auth.
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const authReducer = (state = {authenticated: false}, action) => {
+  switch(action.type) {
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }
+};
+
+const rootReducer = Redux.combineReducer({
+  count: counterReducer,
+  auth: authReducer
+}); // Define the root reducer here
+
+const store = Redux.createStore(rootReducer);
+
+
+
+// Redux Course:  11/17 - Send Action Data to the Store
 // Notes: 
 // 
 
 // Task: 
 //
+const ADD_NOTE = 'ADD_NOTE';
 
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // Change code below this line
 
+    // Change code above this line
+    default:
+      return state;
+  }
+};
 
-// Redux Course:  11/17 - 
-// Notes: 
-// 
+const addNoteText = (note) => {
+  // Change code below this line
 
-// Task: 
-//
+  // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText('Hello!'));
+console.log(store.getState());
 
 
 
