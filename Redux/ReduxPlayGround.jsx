@@ -412,19 +412,19 @@ const requestingData = () => { return {type: REQUESTING_DATA} }
 const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
 
 const handleAsync = () => {
-  return function(dispatch) {
+  return function (dispatch) {
+    
     // Dispatch request action here
-    dispatch.handleAsync(
-
-    )
+    dispatch(requestingData());
+    
     setTimeout(function() {
       let data = {
         users: ['Jeff', 'William', 'Alice']
       }
+
       // Dispatch received data action here
-      dispatch.receivedData(
-        
-      )
+      dispatch(requestingData(data));
+
     }, 2500);
   }
 };
