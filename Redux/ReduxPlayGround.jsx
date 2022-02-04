@@ -464,17 +464,33 @@ const store = Redux.createStore(
 
 // Task: 
 //
-const INCREMENT = null; // Define a constant for increment action types
-const DECREMENT = null; // Define a constant for decrement action types
+const INCREMENT = 'INCREMENT'; // Define a constant for increment action types
+const DECREMENT = 'DECREMENT'; // Define a constant for decrement action types
 
-const counterReducer = null; // Define the counter reducer which will increment or decrement the state based on the action it receives
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};; // Define the counter reducer which will increment or decrement the state based on the action it receives
 
-const incAction = null; // Define an action creator for incrementing
+const incAction = () => {
+  return {
+    type: 'INCREMENT'
+  }
+}; // Define an action creator for incrementing
 
-const decAction = null; // Define an action creator for decrementing
+const decAction = () => {
+  return {
+    type : 'DECREMENT'
+  }
+}; // Define an action creator for decrementing
 
-const store = null; // Define the Redux store here, passing in your reducers
-
+const store = Redux.createStore(counterReducer); // Define the Redux store here, passing in your reducers
 
 // Redux Course:  14/17 - 
 // Notes: 
