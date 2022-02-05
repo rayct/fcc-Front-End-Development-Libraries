@@ -478,13 +478,13 @@ const counterReducer = (state = 0, action) => {
   }
 };; // Define the counter reducer which will increment or decrement the state based on the action it receives
 
-const incAction = () => {
+const incAction = function () { // ES5 Style Function declaration
   return {
     type: 'INCREMENT'
   }
 }; // Define an action creator for incrementing
 
-const decAction = () => {
+const decAction = () => { // ES6 Style Function declaration
   return {
     type : 'DECREMENT'
   }
