@@ -586,7 +586,17 @@ const immutableReducer = (state = [0,1,2,3,4,5], action) => {
   switch(action.type) {
     case 'REMOVE_ITEM':
       // Don't mutate state here or the tests will fail
-      return
+
+      // Solution 1
+      // var a = state.slice(0, action.index);
+      // var b = state.slice(action.index + 1);
+      // return a.concat(b);
+    
+      // Solution 2
+      return [
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1)
+      ];
     default:
       return state;
   }
@@ -603,10 +613,44 @@ const store = Redux.createStore(immutableReducer);
 
 
 
-// Redux Course:  17/17 - 
+// Redux Course:  17/17 - Copy an Object with Object.assign
 // Notes: 
 // 
 
 // Task: 
-//
+// The Redux state and actions were modified to handle an object for the state.
+// Edit the code to return a new state object for actions with type ONLINE, which set the status property to the string online.
+// Try to use Object.assign() to complete the challenge.
+
+// The Redux store should exist and initialize with a state that is equivalent to the defaultState object declared on line 1.
+// wakeUp and immutableReducer both should be functions.
+// Dispatching an action of type ONLINE should update the property status in state to online and should NOT mutate state.
+// Object.assign should be used to return new state.
+const defaultState = {
+  user: 'CamperBot',
+  status: 'offline',
+  friends: '732,982',
+  community: 'freeCodeCamp'
+};
+
+const immutableReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case 'ONLINE':
+      // Don't mutate state here or the tests will fail
+
+      return
+    default:
+      return state;
+  }
+};
+
+const wakeUp = () => {
+  return {
+    type: 'ONLINE'
+  }
+};
+
+const store = Redux.createStore(immutableReducer);
+
+
 
