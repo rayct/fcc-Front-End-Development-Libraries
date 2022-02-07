@@ -1,3 +1,5 @@
+// Front End Development Libraries - Raymond C Turner
+
 // Redux Course:  1/17 -  Create a Redux Store
 // Notes: 
 // Redux is a state management framework that can be used with a number of different web technologies, including React.
