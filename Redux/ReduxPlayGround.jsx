@@ -637,9 +637,14 @@ const immutableReducer = (state = defaultState, action) => {
   switch(action.type) {
     case 'ONLINE':
       // Don't mutate state here or the tests will fail
+      
+      // Solution 1
+      return Object.assign({}, state, { status: 'online' });
 
-      return
-    default:
+      // Solution 2
+      // const newState = Object.assign({}, defaultState, { status: 'online' });
+      // return newState;
+      default:
       return state;
   }
 };
@@ -651,6 +656,10 @@ const wakeUp = () => {
 };
 
 const store = Redux.createStore(immutableReducer);
+// console.log(store.getState());
+store.dispatch(wakeUp());
+console.log(store.getState());
+console.log(defaultState);
 
 
 
