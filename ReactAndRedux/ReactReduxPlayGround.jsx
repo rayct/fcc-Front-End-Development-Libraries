@@ -64,11 +64,13 @@ class DisplayMessages extends React.Component {
       <div>
         <h2>Type in a new Message:</h2>
         { /* Render an input, button, and ul below this line */ }
-        <input onChange={this.handleChange.bind(this)}/>
+        <input onChange={this.handleChange.bind(this)}value={this.state.input} />
         <button onClick={this.submitMessage.bind(this)}>Submit</button>
-           <ul>
-            <li> {this.state.messages} </li>
-           </ul>
+        <ul>
+          {this.state.messages.map(function(message) {
+            return <li>{message}</li>
+          })}
+            </ul>
         { /* Change code above this line */ }
       </div>
     );
