@@ -47,7 +47,6 @@ class DisplayMessages extends React.Component {
    handleChange(event) {
     this.setState({
       input: event.target.value,
-      messages: this.state.messages
     });
   }
     // Change code below this line
