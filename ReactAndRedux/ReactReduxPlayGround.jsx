@@ -165,7 +165,31 @@ const ADD = 'ADD';
 
  };
 // THE REDUX STORE
- const store = Redux.createStore(messageReducer);
+const store = Redux.createStore(messageReducer);
+ 
+// freeCodeCamp Solution
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(messageReducer);
 
 
 
