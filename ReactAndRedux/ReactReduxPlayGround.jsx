@@ -145,16 +145,26 @@ class DisplayMessages extends React.Component {
 // Dispatching addMessage against the store should immutably add a new message to the array of messages held in state.
 // The messageReducer should return the current state if called with any other actions.
 // Define ADD, addMessage(), messageReducer(), and store here:
+
+// THE SCTION TYPE 'ADD' WHICH IS SET TO A CONST ADD
 const ADD = 'ADD';
-
+// FUNCTION THAT WORKS WITH THE REDUCER
  function addMessage(message) {
-   
+   return {
+     type: 'ADD',
+     message: message
+   };
  }
+// THE REDUCER METHOD
+ function messageReducer (initialState = [], action) {
+   if (action.type === 'ADD') {
+    return [...initialState, action.message];
+   } else {
+     return initialState;
+   }  
 
- function messageReducer () {
-
- }
-
+ };
+// THE REDUX STORE
  const store = Redux.createStore(messageReducer);
 
 
