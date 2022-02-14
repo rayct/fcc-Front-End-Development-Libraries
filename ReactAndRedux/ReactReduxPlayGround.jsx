@@ -339,6 +339,8 @@ function mapStateToProps(state) {
 // mapDispatchToProps should be a function.
 // mapDispatchToProps should return an object.
 // Dispatching addMessage with submitNewMessage from mapDispatchToProps should return a message to the dispatch function.
+
+// Solution 1
 const addMessage = (message) => {
   return {
     type: 'ADD',
@@ -356,12 +358,62 @@ const mapDispatchToProps = function(dispatch) {
   }
 };
 
-// React and Redux Course:  7/10 - 
+// Solution 2: ES6 Method of Writing
+const addMessage = (message) => {
+  return {
+    type: 'ADD',
+    message: message
+  }
+};
+
+// Change code below this line
+
+let mapDispatchToProps = dispatch => {
+  return {
+      submitNewMessage: message => {
+        dispatch(addMessage(message));
+      }
+  }
+};
+
+// React and Redux Course:  7/10 - Connect Redux to React
 // Notes: 
 // 
 
 // Task:
 // 
+const addMessage = (message) => {
+  return {
+    type: 'ADD',
+    message: message
+  }
+};
+
+const mapStateToProps = (state) => {
+  return {
+    messages: state
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewMessage: (message) => {
+      dispatch(addMessage(message));
+    }
+  }
+};
+
+class Presentational extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h3>This is a Presentational Component</h3>
+  }
+};
+
+const connect = ReactRedux.connect;
+// Change code below this line
 
 
 
