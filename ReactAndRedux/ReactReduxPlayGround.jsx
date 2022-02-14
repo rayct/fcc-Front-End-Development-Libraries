@@ -347,12 +347,14 @@ const addMessage = (message) => {
 };
 
 // Change code below this line
-const mapDispatchToProps = () => {
-  return {
-    
-  }
-}
 
+const mapDispatchToProps = function(dispatch) {
+  return {
+      submitNewMessage: function(message) {
+        dispatch(addMessage(message));
+      }
+  }
+};
 
 // React and Redux Course:  7/10 - 
 // Notes: 
