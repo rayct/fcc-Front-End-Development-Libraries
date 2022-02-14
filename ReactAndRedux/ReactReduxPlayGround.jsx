@@ -291,7 +291,7 @@ class AppWrapper extends React.Component {
   // Render the Provider below this line
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={store}> {/* <= A PROP OF STORE PASSED TO IT, EQUAL TO THE REDUX STORE */}
         <DisplayMessages />
       </Provider>
     );
@@ -301,24 +301,57 @@ class AppWrapper extends React.Component {
 
 
 
-// React and Redux Course:  5/10 - 
+// React and Redux Course:  5/10 - Map State to Props
+// Notes: 
+// Behind the scenes, React Redux uses the store.subscribe() method to implement mapStateToProps().
+
+// Task:
+// Create a function mapStateToProps(). 
+// This function should take state as an argument, then return an object which maps that state to specific property names.
+// These properties will become accessible to your component via props.
+// Since this example keeps the entire state of the app in a single array, you can pass that entire state to your component.
+// Create a property messages in the object that's being returned, and set it to state.
+
+// The const state should be an empty array.
+// mapStateToProps should be a function.
+// mapStateToProps should return an object.
+// Passing an array as state to mapStateToProps should return this array assigned to a key of messages.
+
+const state = [];
+// Change the below this line
+
+function mapStateToProps(state) {
+  return {
+    messages: state
+  }
+};
+
+
+
+
+// React and Redux Course:  6/10 - Map Dispatch to Props
 // Notes: 
 // 
 
 // Task:
 // 
+// addMessage should return an object with keys type and message.
+// mapDispatchToProps should be a function.
+// mapDispatchToProps should return an object.
+// Dispatching addMessage with submitNewMessage from mapDispatchToProps should return a message to the dispatch function.
+const addMessage = (message) => {
+  return {
+    type: 'ADD',
+    message: message
+  }
+};
 
-
-
-
-// React and Redux Course:  6/10 - 
-// Notes: 
-// 
-
-// Task:
-// 
-
-
+// Change code below this line
+const mapDispatchToProps = () => {
+  return {
+    
+  }
+}
 
 
 // React and Redux Course:  7/10 - 
