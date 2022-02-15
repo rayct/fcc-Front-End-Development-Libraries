@@ -378,10 +378,18 @@ let mapDispatchToProps = dispatch => {
 
 // React and Redux Course:  7/10 - Connect Redux to React
 // Notes: 
-// 
+// To use this method, pass in the functions as arguments, and immediately call the result with your component.
+// This syntax is a little unusual and looks like: {/* connect(mapStateToProps, mapDispatchToProps)(MyComponent) */}
+// If you want to omit one of the arguments to the connect method, you pass null in its place.
 
 // Task:
-// 
+// Connect this component to Redux with the connect method from the ReactRedux global object, and call it immediately on the Presentational component.
+// Assign the result to a new const called ConnectedComponent that represents the connected component.
+// That's it, now you're connected to Redux! Try changing either of connect's arguments to null and observe the test results.
+
+// The Presentational component should render.
+// The Presentational component should receive a prop messages via connect.
+// The Presentational component should receive a prop submitNewMessage via connect.
 const addMessage = (message) => {
   return {
     type: 'ADD',
@@ -415,6 +423,13 @@ class Presentational extends React.Component {
 const connect = ReactRedux.connect;
 // Change code below this line
 
+// Solution 1 with one of connect's arguments set to null 
+const ConnectedComponent = connect(null, mapDispatchToProps)(Presentational);
+
+// Solution 2 Both of Connects args set to recive both props
+const ConnectedComponent = connect(ConnectedComponent, mapDispatchToProps)(Presentational);
+
+ 
 
 
 
