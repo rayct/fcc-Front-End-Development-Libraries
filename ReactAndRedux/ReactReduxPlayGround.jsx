@@ -689,3 +689,5 @@ ReactDOM.render(
 
 // Only change code below this line
 console.log('Now I know React and Redux!');
+
+// Completed Course Sat 19th Feb 2022: By Raymond Turner
