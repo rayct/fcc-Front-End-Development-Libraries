@@ -594,7 +594,7 @@ class Presentational extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      input: '' // removed the messages property in the local state
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
@@ -619,7 +619,7 @@ class Presentational extends React.Component {
           onChange={this.handleChange}/><br/>
         <button onClick={this.submitMessage}>Submit</button>
         <ul>
-          {this.props.messages.map( (message, idx) => {
+          {this.props.messages.map( (message, idx) => { // maps over the messages received from props rather than state
               return (
                  <li key={idx}>{message}</li>
               )
