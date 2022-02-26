@@ -1,9 +1,11 @@
-// On First Load Function
+
+// OnFirstLoad Function
 // window.onload = init;
 // function init() {
+    
 // }
 function App() {
-
+        
     const [quotes, setQuotes] = React.useState([]);
     const [randomQuote, setRandomQuote] = React.useState("");
     const [color, setColor] = React.useState("fff");
@@ -38,8 +40,6 @@ function App() {
             '#73A857'
         ];
 
-
-
         let randIndex = Math.floor(Math.random() * quotes.length);
         let randColorIndex = Math.floor(Math.random() * colors.length);
         setRandomQuote(quotes[randIndex])
@@ -48,9 +48,10 @@ function App() {
     
 
     return (
-        <div style={{backgroundColor: color, minHeight: "100vh"}}>
+        <div style={{ backgroundColor: color, minHeight: "100vh" }}>
+        
     <div className="container pt-5">
-        <div className="jumbotron">
+        <div className="jumbotron d-flex align-items-center justify-content-center">
             <div className="card">
                 <div className="card-header">Inspirational Quotes</div>
                 <div className="card-body">
@@ -64,10 +65,11 @@ function App() {
                         )}
                     
                     <div className="row">
-                        <button onClick={getNewQuote} className="btn btn-primary ml-3">New Quote</button>
+                                <button onClick={getNewQuote} className="btn btn-primary ml-3">New Quote</button>
+                                {/* <button onClick={getPreviousQuote} className="btn btn-primary ml-1">Previous Quote</button> */}
                             <a href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + randomQuote.text + '"' + randomQuote.author)}
                                 target="_blank" className="btn btn-warning">
-                                <i className="fa fa-twitter"></i>
+                                <i className="fas fa-twitter"></i>
                             </a>
                         <a href="#" className="btn btn-danger"></a>
                     </div>
