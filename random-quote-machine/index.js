@@ -48,9 +48,10 @@ function App() {
     
 
     return (
-        <div style={{ backgroundColor: color, minHeight: "100vh" }}>
+
+    <div style={{ backgroundColor: color, minHeight: "100vh" }}>
         
-    <div className="container pt-5">
+    <div id='quote-box' className="container pt-5">
         <div className="jumbotron d-flex align-items-center justify-content-center">
             <div className="card">
                 <div className="card-header">Inspirational Quotes</div>
@@ -77,7 +78,8 @@ function App() {
             </div>
         </div>
     </div>
-</div>    
+            </div>
+           
     );
 }
 
