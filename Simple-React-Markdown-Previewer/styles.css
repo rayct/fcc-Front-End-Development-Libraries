@@ -1,7 +1,11 @@
 body {
-    background-color: #a4b0be;
+    background-color: #323437;
 }
 
 .preview {
-    background-color: #fff;
+    background-color: #2d2f31;
+}
+
+.editer {
+    background-color: #2d2f31
 }

@@ -21,7 +21,9 @@ class App extends React.Component {
                     <div className="col-6">
                         <textarea id='editer' value={markdown} onChange={this.handleChange} />
                     </div>
-                    <div className="col-6" id="preview"></div>
+                    <div className="col-6" preview id="preview">
+                        <p>Hello Again!</p>
+                    </div>
                 </div>
             </div>
         );
