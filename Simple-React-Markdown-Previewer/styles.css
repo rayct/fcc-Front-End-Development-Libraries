@@ -4,8 +4,13 @@ body {
 
 .preview {
     background-color: #2d2f31;
+    color: #d1d0c5;
 }
 
 .editer {
-    background-color: #2d2f31
+        background-color: #2d2f31;
+        color: #fff;
+}
+.text-center {
+    color: #d1d0c5;
 }
