@@ -12,5 +12,9 @@ body {
         color: #fff;
 }
 .text-center {
-    color: #d1d0c5;
+    /* color: #d1d0c5; */
+    color: #e2b714;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
 }
