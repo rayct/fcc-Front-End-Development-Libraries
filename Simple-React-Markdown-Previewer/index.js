@@ -16,7 +16,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <h1>Convert Markdown</h1>
+                <h2 className="text-center">Convert Markdown</h2>
                 <div className="row">
                     <div className="col-6">
                         <textarea id='editer' value={markdown} onChange={this.handleChange} />
