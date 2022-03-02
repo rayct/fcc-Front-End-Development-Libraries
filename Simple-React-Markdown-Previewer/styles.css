@@ -3,13 +3,13 @@ body {
 }
 
 .preview {
-    background-color: #2d2f31;
-    color: #d1d0c5;
+    background-color: #fff;
+    
 }
 
 .editer {
-        background-color: #2d2f31;
-        color: #fff;
+        background-color: #fff;
+        /* color: #fff; */
 }
 .text-center {
     /* color: #d1d0c5; */
@@ -17,4 +17,10 @@ body {
     /* font-family: 'Poppins', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
+}
+.h6-text{
+    color: #fff;
+}
+textarea, .preview {
+    min-height: 400px
 }

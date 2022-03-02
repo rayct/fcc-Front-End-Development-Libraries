@@ -3,26 +3,30 @@
 // import * as ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
 class App extends React.Component {
     state = {
-        markdown: ''
+        text: ''
     }
 
     handleChange = (e) => {
         this.setState({
-            markdown: e.target.value
+            text: e.target.value
         })
     }
     render() {
-        const { markdown } = this.state;
+        const { text } = this.state;
+
+        const markdown = marked(text);
 
         return (
             <div>
-                <h2 className="text-center">Convert Markdown</h2>
+                <h2 className="text-center m-4">Convert Markdown</h2>
                 <div className="row">
                     <div className="col-6">
-                        <textarea className='form-control' id='editer' value={markdown} onChange={this.handleChange} />
+                        <h6 className='h6-text'>Editor:</h6>
+                        <textarea className='form-control' id='editer' value={text} onChange={this.handleChange} />
                     </div>
-                    <div className='col-6 preview' id="preview">
-                        <p>Hello Again!</p>
+                    <div className='col-6' id="preview">
+                    <h6 className='h6-text'>Previewer:</h6>
+                    <div className='preview rounded' dangerouslySetInnerHTML={{__html: markdown}} />
                     </div>
                 </div>
             </div>
