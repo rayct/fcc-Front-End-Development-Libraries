@@ -1,9 +1,9 @@
 
 // import * as React from "https://cdn.skypack.dev/react@17.0.1";
 // import * as ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
-// marked.setOptions({
-//     breaks: true,
-// })
+marked.setOptions({
+    breaks: true,
+})
 class App extends React.Component {
     state = {
         text: ''
@@ -16,7 +16,7 @@ class App extends React.Component {
     }
     render() {
         const { text } = this.state;
-        
+
         const markdown = marked(text);
 
         return (
