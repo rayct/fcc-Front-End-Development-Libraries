@@ -47,6 +47,6 @@ body {
 
 .box.active {
     /* opacity: 0.8; */
-    background-color: #f20808;
+    background-color: #0e89b6;
     transform: scale(1.1);
 }
