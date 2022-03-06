@@ -34,7 +34,7 @@ body {
     background-color: #2d2f31;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     color: #e2b714;
-    border-radius: 5px;
+    border-radius: 100px;
     cursor: pointer;
     display: flex;
     align-items: center;

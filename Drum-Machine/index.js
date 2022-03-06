@@ -4,7 +4,7 @@ const sounds = [
 {
     // keyCode: 81,
     mp3: 'Q',
-    id: 'Heater-1',
+    // id: 'Heater-1',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
 },
 {
@@ -66,16 +66,28 @@ const App = () => (
 
 
 class Box extends React.Component { 
+    constructor(props) {
+        super(props);
+
+        this.audio = React.createRef();
+    }
+
+    playSound = () => {
+        this.audio.current.play();
+    }
+
+
     render() {
         const { text, audio } = this.props;
+
         return (
-            <div className='box'>
+            <div className='box' onClick={this.playSound}>
                 {text}
-                <audio src={audio} />
+                <audio ref={this.audio} src={audio} className='clip' id={text} />
             </div>
         );
     }
 }
 
 
-ReactDOM.render(<App keys={keys} />, document.getElementById('drum-machine'));
+ReactDOM.render(<App />, document.getElementById('drum-machine'));
