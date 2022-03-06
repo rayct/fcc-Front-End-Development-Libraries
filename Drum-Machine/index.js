@@ -1,79 +1,80 @@
-const keys = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+// const keys = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
 
 const sounds = [
 {
-    // keyCode: 81,
-    mp3: 'Q',
-    // id: 'Heater-1',
+    key: 'Q',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
 },
 {
-    // keyCode: 87,
-    mp3: 'W',
-    // id: 'Heater-2',
+    key: 'W',    
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
 },
 {
-    // keyCode: 69,
-    mp3: 'E',
-    id: 'Heater-3',
+    key: 'E',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
 },
-{
-    // keyCode: 65,
-    mp3: 'A',
-    // id: 'Heater-4',
+{   
+    key: 'A',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
 },
 {
-      // keyCode: 83,
-    mp3: 'S',
-    // id: 'Clap',
+    key: 'S',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
 },
 {
-    // keyCode: 68,
-    mp3: 'D',
-    // id: 'Open-HH',
+    key: 'D', 
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
 },
 {
-    // keyCode: 90,
-    mp3: 'Z',
-    // id: "Kick-n'-Hat",
+    key: 'Z', 
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
 },
 {
-    // keyCode: 88,
-    mp3: 'X',
-    // id: 'Kick',
+    key: 'X',   
     url: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
 },
 {
-    // keyCode: 67,
-    mp3: 'C',
-    // id: 'Closed-HH',
+    key: 'C',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
 }];
 
 const App = () => (
     <div id='display' className='display'>
+        <h1>Open HH</h1>
         {sounds.map((sound, idx) => (
-            <Box text={sound.key} key={idx} audio={sound.mp3} />
+            <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
             ))}
     </div>
 );
 
 
-class Box extends React.Component { 
-    constructor(props) {
-        super(props);
-
-        this.audio = React.createRef();
+class DrumPad extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.audio = React.createRef();
+  }
+    
+    componentDidMount() {
+    this.audio.current.addEventListener('ended', (e) => {
+      const parent = e.target.parentNode;
+      parent.classList.remove('active');
+    });
     }
+    
 
     playSound = () => {
         this.audio.current.play();
+
+        const id = this.audio.current.id;
+
+        const parent = this.audio.current.parentNode;
+        parent.classList.add('active');
+        
+        const display = parent.parentNode;
+        display.querySelector('h1').innerText = `${id} is playing`;
+        
+        
     }
 
 
@@ -88,6 +89,22 @@ class Box extends React.Component {
         );
     }
 }
+
+document.addEventListener('keydown', (e) => {
+  const id = e.key.toUpperCase();
+  const audio = document.getElementById(id);
+  
+  if(audio) {
+    audio.currentTime = 0;
+    const parent = audio.parentNode;
+    parent.classList.add('active');
+    
+    const display = parent.parentNode;
+    display.querySelector('h1').innerText = `${id} is playing`;
+    audio.play();
+  }
+});
+
 
 
 ReactDOM.render(<App />, document.getElementById('drum-machine'));
