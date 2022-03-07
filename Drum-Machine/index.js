@@ -1,40 +1,49 @@
-// const keys = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+// Notes: 1. Set pad Trigger timeout - 2. Change current Pad hit to display drum sound
 
 const sounds = [
 {
     key: 'Q',
+    id:  'Heater-1',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
 },
 {
-    key: 'W',    
+    key: 'W',
+    id:  'Heater-2',    
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
 },
 {
     key: 'E',
+    id:  'Heater-3',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
 },
 {   
     key: 'A',
+    id:  'Heater-4',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
 },
 {
     key: 'S',
+    id:  'Clap',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
 },
 {
-    key: 'D', 
+    key: 'D',
+    id:  'Open-HH', 
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
 },
 {
-    key: 'Z', 
+    key: 'Z',
+    id:  'Kick-n'-'Hat', 
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
 },
 {
-    key: 'X',   
+    key: 'X',
+    id:  'Kick',   
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
 },
 {
     key: 'C',
+    id:  'Closed-HH',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
 }];
 
@@ -70,9 +79,11 @@ playSound = () => {
 
     const parent = this.audio.current.parentNode;
     parent.classList.add('active');
+
     
     const display = parent.parentNode;
     display.querySelector('h1').innerText = `${id} is playing`;
+    // this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
     
     
 }
@@ -101,7 +112,8 @@ document.addEventListener('keydown', (e) => {
     
     const display = parent.parentNode;
     display.querySelector('h1').innerText = `${id} is playing`;
-    audio.play();
+      audio.play();
+      
   }
 });
 
