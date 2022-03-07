@@ -58,7 +58,7 @@ const sounds = [
 
 const App = () => (
     <div id='display' className='display'>
-        <h1>Hit a Drum</h1>
+        <h2>Hit a Drum</h2>
         {sounds.map((sound, idx) => (
             <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
             ))}
@@ -91,7 +91,7 @@ playSound = () => {
 
     
     const display = parent.parentNode;
-    display.querySelector('h1').innerText = `${id} is playing`;
+    display.querySelector('h2').innerText = `${id} is playing`;
     // this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
     
     
@@ -120,7 +120,7 @@ document.addEventListener('keydown', (e) => {
     parent.classList.add('active');
     
     const display = parent.parentNode;
-    display.querySelector('h1').innerText = `${id} is playing`;
+    display.querySelector('h2').innerText = `${id} is playing`;
       audio.play();
       
   }

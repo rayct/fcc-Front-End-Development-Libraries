@@ -28,10 +28,10 @@ body {
     width: 400px;
 }
 
-.display h1 {
-  display: block;
-  width: 100%;
-  text-align: center;
+.display h2 {
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .drum-pad {
