@@ -2,55 +2,55 @@
 
 const sounds = [
 {
-    keyCode: 81,
-    key: 'Q',
+    // keyCode: 81,
     id:  'Heater-1',
+    key: 'Q',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
 },
 {
-    keyCode: 87,
+    // keyCode: 87,
     key: 'W',
     id:  'Heater-2',    
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
 },
 {
-    keyCode: 69,
+    // keyCode: 69,
     key: 'E',
     id:  'Heater-3',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
 },
 {
-    keyCode: 65,
+    // keyCode: 65,
     key: 'A',
     id:  'Heater-4',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
 },
 {
-    keyCode: 83,
+    // keyCode: 83,
     key: 'S',
     id:  'Clap',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
 },
 {
-    keyCode: 68,
+    // keyCode: 68,
     key: 'D',
     id:  'Open-HH', 
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
 },
 {
-    keyCode: 90,
+    // keyCode: 90,
     key: 'Z',
-    id:  'Kick-n'-'Hat', 
+    id:  'Kick-n Hat',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
 },
 {
-    keyCode: 88,
+    // keyCode: 88,
     key: 'X',
     id:  'Kick',   
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
 },
 {
-    keyCode: 67,
+    // keyCode: 67,
     key: 'C',
     id:  'Closed-HH',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
@@ -60,7 +60,7 @@ const App = () => (
     <div id='display' className='display'>
         <h2>Hit a Drum</h2>
         {sounds.map((sound, idx) => (
-            <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
+          <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
             ))}
     </div>
 );
@@ -90,13 +90,13 @@ playSound = () => {
     parent.classList.add('active');
 
     
-    const display = parent.parentNode;
-    display.querySelector('h2').innerText = `${id} is playing`;
-    // this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
+  const display = parent.parentNode;
+    display.querySelector('id').innerText = '';
+    // display.querySelector('h2').innerText = (id ? id : 'key');
+    // this.props.updateDisplay(this.props.clipId.replace(/-/g, 'id'));
     
     
 }
-
 
 render() {
     const { text, audio } = this.props;
@@ -119,9 +119,11 @@ document.addEventListener('keydown', (e) => {
     const parent = audio.parentNode;
     parent.classList.add('active');
     
-    const display = parent.parentNode;
-    display.querySelector('h2').innerText = `${id} is playing`;
-      audio.play();
+    // const display = parent.parentNode;
+    // display.querySelector('h2').innerText = (id ? id : 'key');
+    // display.querySelector('h2').innerText = id;
+    // this.props.updateDisplay(this.props.clipId.replace(/-/g, 'h2'))
+    // audio.play();
       
   }
 });
