@@ -1,0 +1,33 @@
+body {
+  user-select: none;
+  background-color: #cee;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#drum-machine {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+  width: 900px;
+}
+
+#display {
+  font-family: monospace;
+  padding: 0.25rem;
+  background: #fff;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.drum-pad {
+  min-width: 100px;
+  width: 33.33%;
+  height: 100px;
+}

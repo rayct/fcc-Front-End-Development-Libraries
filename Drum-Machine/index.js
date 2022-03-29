@@ -60,8 +60,8 @@ const sounds = [
 const App = () => (
   <div id="display" className="display">
     <h2>Hit a Drum</h2>
-    {sounds.map((sound, idx) => (
-      <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
+    {sounds.map((sound, idx, tone) => (
+      <DrumPad text={sound.key} key={idx} audio={sound.mp3} tone={tone} />
     ))}
   </div>
 );
@@ -81,43 +81,50 @@ class DrumPad extends React.Component {
   }
 
   playSound = () => {
-    this.audio.current.play();
+    this.audio.current.play(tone);
 
-    const id = this.audio.current.id;
+    // ?????????????????????????????
+    const tone = this.sound.current.tone;
 
-    const parent = this.audio.current.parentNode;
+    const parent = this.audio.current.tone;
     parent.classList.add('active');
 
     // When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).
-    const display = parent.parentNode;
-    display.querySelector('h1').innerText = `${id} is playing`;
+    const display = parent.tone;
+    display.querySelector('h2').innerText = `${ tone }`;
   };
 
   render() {
-    const { text, audio } = this.props;
+    const { text, audio, tone } = this.props;
 
     return (
-      <div className="drum-pad" onClick={this.playSound} id={`drum-${text}`}>
-        {text}
-        <audio ref={this.audio} src={audio} className="clip" />
+      <div className="drum-pad" onClick={this.playSound} id={`drum-${tone}`}>
+        {tone}
+        <audio
+          ref={this.audio}
+          src={audio}
+          className="clip"
+          id={tone}
+          // tone={text.tone}
+        />
       </div>
     );
   }
 }
 // Keyboard Control
-document.addEventListener('keydown', (e) => {
-  const id = e.key.toUpperCase();
-  const audio = document.getElementById(id);
+// document.addEventListener('keydown', (e) => {
+//   const id = e.key.toUpperCase();
+//   const audio = document.getElementById(id);
 
-  if (audio) {
-    audio.currentTime = 0;
-    const parent = audio.parentNode;
-    parent.classList.add('active');
+//   if (audio) {
+//     audio.currentTime = 0;
+//     const parent = audio.parentNode;
+//     parent.classList.add('active');
 
-    const display = parent.parentNode;
-    display.querySelector('h2').innerText = `${id} is playing`;
-    audio.play();
-  }
-});
+//     const display = parent.parentNode;
+//     display.querySelector('h2').innerText = `${id} is playing`;
+//     audio.play();
+//   }
+// });
 
 ReactDOM.render(<App />, document.getElementById('drum-machine'));
