@@ -53,6 +53,6 @@ body {
 
 .drum-pad.active {
     /* opacity: 0.8; */
-    background-color: #0e89b6;
+    background-color: #5352ed;
     transform: scale(1.1);
 }
