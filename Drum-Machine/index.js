@@ -4,55 +4,55 @@ const sounds = [
   {
     keyCode: 81,
     key: 'Q',
-    tone: 'Heater-1',
+    id: 'Heater-1',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3',
   },
   {
     keyCode: 87,
     key: 'W',
-    tone: 'Heater-2',
+    id: 'Heater-2',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3',
   },
   {
     keyCode: 69,
     key: 'E',
-    tone: 'Heater-3',
+    id: 'Heater-3',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3',
   },
   {
     keyCode: 65,
     key: 'A',
-    tone: 'Heater-4',
+    id: 'Heater-4',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3',
   },
   {
     keyCode: 83,
     key: 'S',
-    tone: 'Clap',
+    id: 'Clap',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3',
   },
   {
     keyCode: 68,
     key: 'D',
-    tone: 'Open-HH',
+    id: 'Open-HH',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3',
   },
   {
     keyCode: 90,
     key: 'Z',
-    tone: 'Kick-n' - 'Hat',
+    id: 'Kick-n' - 'Hat',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3',
   },
   {
     keyCode: 88,
     key: 'X',
-    tone: 'Kick',
+    id: 'Kick',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3',
   },
   {
     keyCode: 67,
     key: 'C',
-    tone: 'Closed-HH',
+    id: 'Closed-HH',
     mp3: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',
   },
 ];
@@ -60,8 +60,8 @@ const sounds = [
 const App = () => (
   <div id="display" className="display">
     <h2>Hit a Drum</h2>
-    {sounds.map((sound, idx, tone) => (
-      <DrumPad text={sound.key} key={idx} audio={sound.mp3} tone={tone} />
+    {sounds.map((sound, idx) => (
+      <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
     ))}
   </div>
 );
@@ -81,50 +81,44 @@ class DrumPad extends React.Component {
   }
 
   playSound = () => {
-    this.audio.current.play(tone);
+    this.audio.current.play();
 
-    // ?????????????????????????????
-    const tone = this.sound.current.tone;
+    const id = this.audio.current.id;
 
-    const parent = this.audio.current.tone;
+    const parent = this.audio.current.parentNode;
     parent.classList.add('active');
+    audio.currentTime = 0;
 
-    // When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).
-    const display = parent.tone;
-    display.querySelector('h2').innerText = `${ tone }`;
+    const display = parent.parentNode;
+    display.querySelector('h2').innerText = `${id} is playing`;
+    // this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
   };
 
   render() {
-    const { text, audio, tone } = this.props;
+    const { text, audio } = this.props;
 
     return (
-      <div className="drum-pad" onClick={this.playSound} id={`drum-${tone}`}>
-        {tone}
-        <audio
-          ref={this.audio}
-          src={audio}
-          className="clip"
-          id={tone}
-          // tone={text.tone}
-        />
+      <div className="drum-pad" onClick={this.playSound} id={`drum-${text}`}>
+        {text}
+        <audio ref={this.audio} src={audio} className="clip" id={text} />
       </div>
     );
   }
 }
-// Keyboard Control
-// document.addEventListener('keydown', (e) => {
-//   const id = e.key.toUpperCase();
-//   const audio = document.getElementById(id);
 
-//   if (audio) {
-//     audio.currentTime = 0;
-//     const parent = audio.parentNode;
-//     parent.classList.add('active');
+document.addEventListener('keydown', (e) => {
+  const id = e.key.toUpperCase();
+  const audio = document.getElementById(id);
 
-//     const display = parent.parentNode;
-//     display.querySelector('h2').innerText = `${id} is playing`;
-//     audio.play();
-//   }
-// });
+  if (audio) {
+    audio.currentTime = 0;
+    const parent = audio.parentNode;
+    parent.classList.add('active');
+
+    const display = parent.parentNode;
+    display.querySelector('h2').innerText = `${id} is playing`;
+    audio.play();
+  }
+});
 
 ReactDOM.render(<App />, document.getElementById('drum-machine'));
