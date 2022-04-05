@@ -1,26 +1,33 @@
 function App() {
-  return (
+    const [expression, setExpression] =React.useState("");
+
+    const display = (symbol) => {
+        setExpression(prev => prev + symbol)
+    };
+    return (
     <div className="container">
       <div className="grid">
-        <div className="dis"></div>
-        <div className="padButton AC">AC</div>
-        <div className="padButton clear">C</div>
-        <div className="padButton divide">/</div>
-        <div className="padButton multiply">x</div>
-        <div className="padButton seven">7</div>
-        <div className="padButton eight">8</div>
-        <div className="padButton nine">9</div>
-        <div className="padButton subtract">-</div>
-        <div className="padButton four">4</div>
-        <div className="padButton five">5</div>
-        <div className="padButton six">6</div>
-        <div className="padButton plus">+</div>
-        <div className="padButton one">1</div>
-        <div className="padButton two">2</div>
-        <div className="padButton three">3</div>
-        <div className="padButton equals">=</div>
-        <div className="padButton zero">0</div>
-        <div className="padButton decimal">.</div>
+        <div className="dis">
+            <input type="text" value={expression} placeholder="0" disabled />
+        </div>
+        <div onClick={display} className="padButton AC sunset-orange">AC</div>
+        <div onClick={display} className="padButton clear sunset-orange">C</div>
+        <div onClick={display} className="padButton divide">/</div>
+        <div onClick={display} className="padButton multiply">x</div>
+        <div onClick={() => display(7)} className="padButton seven good-night">7</div>
+        <div onClick={display} className="padButton eight good-night">8</div>
+        <div onClick={display} className="padButton nine good-night">9</div>
+        <div onClick={display} className="padButton subtract">-</div>
+        <div onClick={display} className="padButton four good-night">4</div>
+        <div onClick={display} className="padButton five good-night">5</div>
+        <div onClick={display} className="padButton six good-night">6</div>
+        <div onClick={display} className="padButton plus">+</div>
+        <div onClick={display} className="padButton one good-night">1</div>
+        <div onClick={display} className="padButton two good-night">2</div>
+        <div onClick={display} className="padButton three good-night">3</div>
+        <div onClick={display} className="padButton equals dark-periwinkle">=</div>
+        <div onClick={display} className="padButton zero good-night">0</div>
+        <div onClick={display} className="padButton decimal good-night">.</div>
       </div>
     </div>
   );
