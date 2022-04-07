@@ -9,7 +9,7 @@
     display: grid;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "dis dis dis dis" 
     "AC C divide multiply"
@@ -24,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 40px;
     background-color: #747d8c;
     color: #ced6e0;
     border: 1px solid black;
@@ -33,7 +33,7 @@
 }
 .padButton:hover{
     border: 1px solid white;
-    color: #bbb;
+    color: black;
 }
 .dis{
     grid-area: dis;
@@ -43,17 +43,18 @@
 }
 .dis input{
     width: 90%;
-    color: white;
+    color: orange;
     padding: 15px 20px;
     text-align: right;
-    background-color: #000
+    background-color: #1e272e
+    /* border: 1px solid black; */
 }
 .input::placeholder{
     color: white;
 }
 .total{
-    padding: 5px, 20px;
-    color: #fff;
+    padding: 5px 10px;
+    color: white;
 }
 .zero{
     grid-area: zero;

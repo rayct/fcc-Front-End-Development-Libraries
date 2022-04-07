@@ -32,71 +32,127 @@ function App() {
   return (
     <div className="container">
       <div className="grid">
-        <div className="dis">
+        <div id="display" className="dis">
           <input type="text" value={expression} placeholder="0" disabled />
           <div className="total">{answer}</div>
         </div>
-        <div onClick={allClear} className="padButton AC sunset-orange">
+        <div
+          id="allclear"
+          onClick={allClear}
+          className="padButton AC sunset-orange"
+        >
           AC
         </div>
-        <div onClick={clear} className="padButton clear sunset-orange">
+        <div
+          id="clear"
+          onClick={clear}
+          className="padButton clear sunset-orange"
+        >
           C
         </div>
-        <div onClick={() => display('/')} className="padButton divide">
+        <div
+          id="divide"
+          onClick={() => display('/')}
+          className="padButton divide"
+        >
           /
         </div>
-        <div onClick={() => display('x')} className="padButton multiply">
+        <div
+          id="multiply"
+          onClick={() => display('*')}
+          className="padButton multiply"
+        >
           x
         </div>
         <div
+          id="seven"
           onClick={() => display('7')}
           className="padButton seven good-night"
         >
           7
         </div>
         <div
+          id="eight"
           onClick={() => display('8')}
           className="padButton eight good-night"
         >
           8
         </div>
-        <div onClick={() => display('9')} className="padButton nine good-night">
+        <div
+          id="nine"
+          onClick={() => display('9')}
+          className="padButton nine good-night"
+        >
           9
         </div>
-        <div onClick={() => display('-')} className="padButton subtract">
+        <div
+          id="subtract"
+          onClick={() => display('-')}
+          className="padButton subtract"
+        >
           -
         </div>
-        <div onClick={() => display('4')} className="padButton four good-night">
+        <div
+          id="four"
+          onClick={() => display('4')}
+          className="padButton four good-night"
+        >
           4
         </div>
-        <div onClick={() => display('5')} className="padButton five good-night">
+        <div
+          id="five"
+          onClick={() => display('5')}
+          className="padButton five good-night"
+        >
           5
         </div>
-        <div onClick={() => display('6')} className="padButton six good-night">
+        <div
+          id="six"
+          onClick={() => display('6')}
+          className="padButton six good-night"
+        >
           6
         </div>
-        <div onClick={() => display('+')} className="padButton plus">
+        <div id="add" onClick={() => display('+')} className="padButton plus">
           +
         </div>
-        <div onClick={() => display('1')} className="padButton one good-night">
+        <div
+          id="one"
+          onClick={() => display('1')}
+          className="padButton one good-night"
+        >
           1
         </div>
-        <div onClick={() => display('2')} className="padButton two good-night">
+        <div
+          id="two"
+          onClick={() => display('2')}
+          className="padButton two good-night"
+        >
           2
         </div>
         <div
+          id="three"
           onClick={() => display('3')}
           className="padButton three good-night"
         >
           3
         </div>
-        <div onClick={calculate} className="padButton equals dark-periwinkle">
+        <div
+          id="equals"
+          onClick={calculate}
+          className="padButton equals dark-periwinkle"
+        >
           =
         </div>
-        <div onClick={() => display('0')} className="padButton zero good-night">
+        <div
+          id="zero"
+          onClick={() => display('0')}
+          className="padButton zero good-night"
+        >
           0
         </div>
         <div
+          id="decimal"
           onClick={() => display('.')}
           className="padButton decimal good-night"
         >
