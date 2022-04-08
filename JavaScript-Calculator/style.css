@@ -1,73 +1,68 @@
-.container{
-    padding-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.grid{
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  height: 445px;
+  max-width: 460px;
+  border-radius: 4px;
+  background-color: rgb(79, 79, 79);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.output {
+    height: 80px;
+}
+
+.keys {
+    gap: 5px;
+    padding: 10px;
     display: grid;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    "dis dis dis dis" 
-    "AC C divide multiply"
-    "seven eight nine subtract"
-    "four five six plus"
-    "one two three equals"
-    "zero zero dot equals"
-    ;
 }
 
-.padButton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #747d8c;
-    color: #ced6e0;
-    border: 1px solid black;
+.keys button:first-child {
+    color: #ffffff;
+    grid-column-end: 3;
+    grid-column-start: 1;
+    background-color: orange;
+}
+
+.keys button:nth-child(15) {
+    color: #ffffff;
+    grid-row: 4 / 6;
+    grid-column: 4 / 4;
+    background-color: green;
+}
+
+.keys button:nth-child(16) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.input,
+.result {
+    color: #fff;
+    height: 40px;
+    display: block;
+    font-size: 40px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+button {
+    border: none;
+    font-size: 28px;
+    min-width: 80px;
+    min-height: 65px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 20px
-}
-.padButton:hover{
-    border: 1px solid white;
-    color: black;
-}
-.display{
-    grid-area: dis;
-    background-color: #1e272e;
-    text-align: right;
-    font-size: 20px;
-}
-.display input{
-    width: 90%;
-    color: orange;
-    padding: 15px 20px;
-    text-align: right;
-    background-color: #1e272e
-    /* border: 1px solid black; */
-}
-.input::placeholder{
-    color: white;
-}
-.total{
-    padding: 5px 10px;
-    color: white;
-}
-.zero{
-    grid-area: zero;
-}
-.equals{
-    grid-area: equals;
-}
-.good-night{
-    background-color: #485460;
-}
-.sunset-orange{
-    background-color: #ff5e57;
-}
-.dark-periwinkle{
-    background-color: #575fcf;
 }

@@ -1,166 +1,188 @@
-function App() {
-  const [expression, setExpression] = React.useState('');
-  const [answer, setAnswer] = React.useState(0);
+const calcData = [
+  { id: 'clear', value: 'AC' },
+  { id: 'divide', value: '/' },
+  { id: 'multiply', value: 'x' },
+  { id: 'seven', value: 7 },
+  { id: 'eight', value: 8 },
+  { id: 'nine', value: 9 },
+  { id: 'subtract', value: '-' },
+  { id: 'four', value: 4 },
+  { id: 'five', value: 5 },
+  { id: 'six', value: 6 },
+  { id: 'add', value: '+' },
+  { id: 'one', value: 1 },
+  { id: 'two', value: 2 },
+  { id: 'three', value: 3 },
+  { id: 'equals', value: '=' },
+  { id: 'zero', value: 0 },
+  { id: 'decimal', value: '.' },
+];
 
-  const display = (symbol) => {
-    setExpression((prev) => prev + symbol);
-    if (expression[expression.length - 0] === '=') {
-      if (/[0.9]/.test(symbol)) {
-        setExpression(symbol);
+const operators = ['AC', '/', 'x', '+', '-', '='];
+
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const Display = ({ input, output }) => (
+  <div className="output">
+    <span className="result">{output}</span>
+    <span id="display" className="input">
+      {input}
+    </span>
+  </div>
+);
+
+const Key = ({ keyData: { id, value }, handleInput }) => (
+  <button id={id} onClick={() => handleInput(value)}>
+    {value}
+  </button>
+);
+
+const Keyboard = ({ handleInput }) => (
+  <div className="keys">
+    {calcData.map((key) => (
+      <Key key={key.id} keyData={key} handleInput={handleInput} />
+    ))}
+  </div>
+);
+
+const App = () => {
+  const [input, setInput] = React.useState('0');
+  const [output, setOutput] = React.useState('');
+  const [calculatorData, setCalculatorData] = React.useState('');
+
+  const handleSubmit = () => {
+    console.log({ calculatorData });
+
+    const total = eval(calculatorData);
+    setInput(total);
+    setOutput(`${total} = ${total}`);
+    setCalculatorData(`${total}`);
+  };
+
+  const handleClear = () => {
+    setInput('0');
+    setCalculatorData('');
+  };
+
+  const handleNumbers = (value) => {
+    if (!calculatorData.length) {
+      setInput(`${value}`);
+      setCalculatorData(`${value}`);
+    } else {
+      if (value === 0 && (calculatorData === '0' || input === '0')) {
+        setCalculatorData(`${calculatorData}`);
       } else {
-        setExpression(answer + symbol);
+        const lastChat = calculatorData.charAt(calculatorData.length - 1);
+        const isLastChatOperator =
+          lastChat === '*' || operators.includes(lastChat);
+
+        setInput(isLastChatOperator ? `${value}` : `${input}${value}`);
+        setCalculatorData(`${calculatorData}${value}`);
       }
     }
   };
-  const calculate = () => {
-    setAnswer(eval(expression));
-    setExpression((prev) => prev + '=');
+
+  const dotOperator = () => {
+    const lastChat = calculatorData.charAt(calculatorData.length - 1);
+    if (!calculatorData.length) {
+      setInput('0.');
+      setCalculatorData('0.');
+    } else {
+      if (lastChat === '*' || operators.includes(lastChat)) {
+        setInput('0.');
+        setCalculatorData(`${calculatorData} 0.`);
+      } else {
+        setInput(
+          lastChat === '.' || input.includes('.') ? `${input}` : `${input}.`
+        );
+        const formattedValue =
+          lastChat === '.' || input.includes('.')
+            ? `${calculatorData}`
+            : `${calculatorData}.`;
+        setCalculatorData(formattedValue);
+      }
+    }
   };
-  const allClear = () => {
-    setExpression('');
-    setAnswer(0);
+
+  const handleOperators = (value) => {
+    if (calculatorData.length) {
+      setInput(`${value}`);
+      const beforeLastChat = calculatorData.charAt(calculatorData.length - 2);
+
+      const beforeLastChatIsOperator =
+        operators.includes(beforeLastChat) || beforeLastChat === '*';
+
+      const lastChat = calculatorData.charAt(calculatorData.length - 1);
+
+      const lastChatIsOperator =
+        operators.includes(lastChat) || lastChat === '*';
+
+      const validOp = value === 'x' ? '*' : value;
+      if (
+        (lastChatIsOperator && value !== '-') ||
+        (beforeLastChatIsOperator && lastChatIsOperator)
+      ) {
+        if (beforeLastChatIsOperator) {
+          const updatedValue = `${calculatorData.substring(
+            0,
+            calculatorData.length - 2
+          )}${value}`;
+          setCalculatorData(updatedValue);
+        } else {
+          setCalculatorData(
+            `${calculatorData.substring(
+              0,
+              calculatorData.length - 1
+            )}${validOp}`
+          );
+        }
+      } else {
+        setCalculatorData(`${calculatorData}${validOp}`);
+      }
+    }
   };
-  const clear = () => {
-    setExpression((prev) =>
-      prev
-        .split('')
-        .slice(0, prev.length - 1)
-        .join('')
-    );
-    setAnswer(0);
+
+  const handleInput = (value) => {
+    const number = numbers.find((num) => num === value);
+    const operator = operators.find((op) => op === value);
+
+    switch (value) {
+      case '=':
+        handleSubmit();
+        break;
+      case 'AC':
+        handleClear();
+        break;
+      case number:
+        handleNumbers(value);
+        break;
+      case '.':
+        dotOperator(value);
+        break;
+      case operator:
+        handleOperators(value);
+        break;
+      default:
+        break;
+    }
   };
+
+  const handleOutput = () => {
+    setOutput(calculatorData);
+  };
+
+  React.useEffect(() => {
+    handleOutput();
+  }, [calculatorData]);
+
   return (
     <div className="container">
-      <div className="grid">
-        <div id="display" className="display">
-          <input type="text" value={expression} placeholder="0" disabled />
-          <div className="total">{answer}</div>
-        </div>
-        <div
-          id="allclear"
-          onClick={allClear}
-          className="padButton AC sunset-orange"
-        >
-          AC
-        </div>
-        <div
-          id="clear"
-          onClick={clear}
-          className="padButton clear sunset-orange"
-        >
-          C
-        </div>
-        <div
-          id="divide"
-          onClick={() => display('/')}
-          className="padButton divide"
-        >
-          /
-        </div>
-        <div
-          id="multiply"
-          onClick={() => display('*')}
-          className="padButton multiply"
-        >
-          x
-        </div>
-        <div
-          id="seven"
-          onClick={() => display('7')}
-          className="padButton seven good-night"
-        >
-          7
-        </div>
-        <div
-          id="eight"
-          onClick={() => display('8')}
-          className="padButton eight good-night"
-        >
-          8
-        </div>
-        <div
-          id="nine"
-          onClick={() => display('9')}
-          className="padButton nine good-night"
-        >
-          9
-        </div>
-        <div
-          id="subtract"
-          onClick={() => display('-')}
-          className="padButton subtract"
-        >
-          -
-        </div>
-        <div
-          id="four"
-          onClick={() => display('4')}
-          className="padButton four good-night"
-        >
-          4
-        </div>
-        <div
-          id="five"
-          onClick={() => display('5')}
-          className="padButton five good-night"
-        >
-          5
-        </div>
-        <div
-          id="six"
-          onClick={() => display('6')}
-          className="padButton six good-night"
-        >
-          6
-        </div>
-        <div id="add" onClick={() => display('+')} className="padButton plus">
-          +
-        </div>
-        <div
-          id="one"
-          onClick={() => display('1')}
-          className="padButton one good-night"
-        >
-          1
-        </div>
-        <div
-          id="two"
-          onClick={() => display('2')}
-          className="padButton two good-night"
-        >
-          2
-        </div>
-        <div
-          id="three"
-          onClick={() => display('3')}
-          className="padButton three good-night"
-        >
-          3
-        </div>
-        <div
-          id="equals"
-          onClick={calculate}
-          className="padButton equals dark-periwinkle"
-        >
-          =
-        </div>
-        <div
-          id="zero"
-          onClick={() => display('0')}
-          className="padButton zero good-night"
-        >
-          0
-        </div>
-        <div
-          id="decimal"
-          onClick={() => display('.')}
-          className="padButton decimal good-night"
-        >
-          .
-        </div>
+      <div className="calculator">
+        <Display input={input} output={output} />
+        <Keyboard handleInput={handleInput} />
       </div>
     </div>
   );
-}
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('app'));
