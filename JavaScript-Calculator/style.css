@@ -35,13 +35,13 @@
     border: 1px solid white;
     color: black;
 }
-.dis{
+.display{
     grid-area: dis;
     background-color: #1e272e;
     text-align: right;
     font-size: 20px;
 }
-.dis input{
+.display input{
     width: 90%;
     color: orange;
     padding: 15px 20px;

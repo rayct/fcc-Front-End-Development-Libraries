@@ -4,7 +4,7 @@ function App() {
 
   const display = (symbol) => {
     setExpression((prev) => prev + symbol);
-    if (expression[expression.length - 1] == '=') {
+    if (expression[expression.length - 0] === '=') {
       if (/[0.9]/.test(symbol)) {
         setExpression(symbol);
       } else {
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="container">
       <div className="grid">
-        <div id="display" className="dis">
+        <div id="display" className="display">
           <input type="text" value={expression} placeholder="0" disabled />
           <div className="total">{answer}</div>
         </div>
