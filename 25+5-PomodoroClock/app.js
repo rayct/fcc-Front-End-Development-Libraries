@@ -1,14 +1,21 @@
 class App extends React.Component {
+  state = {
+    breakCount: 5,
+    sessionCount: 25,
+  };
+
   render() {
+    const { breakCount, sessionCount } = this.state;
+
     const breakProps = {
       title: 'Break Length',
-      count: 5,
+      count: breakCount,
       handleDecrease: this.handleDecrease,
       handleIncrease: this.handleIncrease,
     };
     const sessionProps = {
       title: 'Session Length',
-      count: 25,
+      count: sessionCount,
       handleDecrease: this.handleSessionDecrease,
       handleIncrease: this.handleSessionIncrease,
     };
