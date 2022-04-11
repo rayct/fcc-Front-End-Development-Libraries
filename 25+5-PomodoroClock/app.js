@@ -1,31 +1,45 @@
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.loop = undefined;
-  }
-  state = {
-    breakCount: 5,
-    sessionCount: 25,
-    clockCount: 25 * 60,
-    currentTimer: 'Session',
-    isPlaying: false,
-    loop: undefined,
-  };
-
-  handlePlayPause = () => {
-    const { isPlaying } = this.state;
-
-    if (isPlaying) {
-      clearInterval(this.loop);
-      this.setState({ isPlaying: false });
-    } else {
-      this.setState({ isPlaying: true });
-
-      this.loop = setInterval(() => {
-        const { clockCount } = this.state;
-        this.setState({ clockCount: clockCount - 1 });
-      }, 1000);
+    constructor(props) {
+        super(props);
+        this.loop = undefined;
     }
+    state = {
+        breakCount: 5,
+        sessionCount: 25,
+        clockCount: 25 * 60,
+        currentTimer: 'Session',
+        isPlaying: false,
+        loop: undefined,
+    };
+
+    handlePlayPause = () => {
+        const { isPlaying } = this.state;
+
+        if (isPlaying) {
+            clearInterval(this.loop);
+            this.setState({ isPlaying: false });
+        } else {
+            this.setState({ isPlaying: true });
+
+            this.loop = setInterval(() => {
+                const { clockCount,
+                    currentTimer,
+                    breakCount,
+                    sessionCount
+                } = this.state;
+
+                if (clockCount === 0) {
+                    this.setState({
+                        currentTimer: (currentTimer === 'Session') ? 'Break' : 'Session', 
+              clockCount: (currentTimer === 'Session') ? (breakCount * 60) : (sessionCount * 60)
+          });
+        } else {
+        this.setState({
+          clockCount: clockCount - 1
+        });
+        }
+    }, 1000);
+}
   };
 
   //   handlePlayPause = () => {
