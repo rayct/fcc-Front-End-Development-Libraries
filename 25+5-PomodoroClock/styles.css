@@ -6,15 +6,26 @@
 
 body {
     background-color: #383838;
-    color: #d1d0c5;
+    /* color: #d1d0c5; */
     /* color: #e2b714; */
     /* color: #e8710a; */
-    /* color: #f9ab00; */
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    color: #f9ab00;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px 15px;
+    
 }
 
 .flex{
@@ -24,20 +35,33 @@ body {
 }
 
 .timer-container {
-    margin: 20px;
-}
-.timer-container h1 {
-    text-align: center;
+    margin: -50px 20px 20px;
 }
 
-.actions-wrapper button {
-    background-color: transparent;
-    padding: 10px;
-    margin: 10px;
-    color: #fff;
+.timer-container h2 {
+    margin: 0;
 }
 
 .actions-wrapper span {
     font-size: 35px;
     margin: 0 10px;
+}
+
+.clock-container {
+    border: 2px solid #fff;
+    border-radius: 10px; 
+    display: inline-block;
+    padding: 10px 100px;
+    margin-top: 20px;
+    width: 500px;
+
+}
+
+.clock-container h1 {
+    margin: 0;
+    /* color: #f9ab00; */
+}
+
+.clock-container span {
+    font-size: 60px;
 }
