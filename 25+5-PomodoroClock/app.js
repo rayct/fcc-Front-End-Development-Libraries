@@ -1,4 +1,4 @@
-// const audio = document.getElementById('beep');
+const audio = document.getElementById('beep');
 
 class App extends React.Component {
   state = {
@@ -39,7 +39,7 @@ class App extends React.Component {
               currentTimer === 'Session' ? breakCount * 60 : sessionCount * 60,
           });
 
-          // audio.play();
+          audio.play();
         } else {
           this.setState({
             clockCount: clockCount - 1,
@@ -59,7 +59,9 @@ class App extends React.Component {
     });
 
     clearInterval(this.loop);
-  };
+  
+  audio.pause();
+  audio.currentTime = 0;
 
   convertToTime = (count) => {
     const minutes = Math.floor(count / 60);
@@ -71,12 +73,10 @@ class App extends React.Component {
     return `${minutes}:${seconds}`;
   };
 
-  // audio.pause();
-  // audio.currentTime = 0;
 
   handleBreakDecrease = () => {
     const { breakCount } = this.state;
-    if (breakCount > 1) {
+    if (breakCount > 0) {
       this.setState({
         breakCount: breakCount - 1,
       });
@@ -94,7 +94,7 @@ class App extends React.Component {
 
   handleSessionDecrease = () => {
     const { sessionCount } = this.state;
-    if (sessionCount > 1) {
+    if (sessionCount > 0) {
       this.setState({
         sessionCount: sessionCount - 1,
       });
@@ -109,23 +109,25 @@ class App extends React.Component {
     }
   };
 
-  render() {
-    const { breakCount, sessionCount, clockCount, currentTimer, isPlaying } =
-      this.state;
+    render() {
+      const { breakCount, sessionCount, clockCount, currentTimer, isPlaying } =
+        this.state;
 
-    const breakProps = {
-      title: 'Break Length',
-      count: breakCount,
-      handleDecrease: this.handleBreakDecrease,
-      handleIncrease: this.handleBreakIncrease,
-    };
+      const breakProps = {
+        title: 'Break Length',
+        count: breakCount,
+        handleDecrease: this.handleBreakDecrease,
+        handleIncrease: this.handleBreakIncrease,
+      };
 
-    const sessionProps = {
-      title: 'Session Length',
-      count: sessionCount,
-      handleDecrease: this.handleSessionDecrease,
-      handleIncrease: this.handleSessionIncrease,
-    };
+      const sessionProps = {
+        title: 'Session Length',
+        count: sessionCount,
+        handleDecrease: this.handleSessionDecrease,
+        handleIncrease: this.handleSessionIncrease,
+      };
+    }
+    
 
     return (
       <div>
@@ -133,38 +135,46 @@ class App extends React.Component {
           <SetTimer {...breakProps} />
           <SetTimer {...sessionProps} />
         </div>
-
+        
         <div className="clock-container">
-          <h1>{currentTimer}</h1>
-          <span>{this.convertToTime(clockCount)}</span>
-
+          <h1 id="timer-label">{currentTimer}</h1>
+          <span id="time-left">{this.convertToTime(clockCount)}</span>
+          
+          
           <div className="flex">
-            <button onClick={this.handlePlayPause}>
-              <i className={`fas fa-${isPlaying ? 'pause' : 'play'}`} />
+            <button id="start_stop" onClick={this.handlePlayPause}>
+              <i className={`fas fa-${isPlaying ? 'pause': 'play'}`} />
             </button>
-            <button onClick={this.handleReset}>
+            <button id="reset" onClick={this.handleReset}>
               <i className="fas fa-sync" />
             </button>
           </div>
         </div>
-      </div>
-    );
+      </div>);
   }
 }
 
-const SetTimer = (props) => (
-  <div className="timer-container">
-    <h2>{props.title}</h2>
-    <div className="flex actions-wrapper">
-      <button onClick={props.handleDecrease}>
-        <i className="fas fa-minus" />
-      </button>
-      <span>{props.count}</span>
-      <button onClick={props.handleIncrease}>
-        <i className="fas fa-plus" />
-      </button>
+  const SetTimer = (props) => {
+  const id = props.title.toLowerCase();
+  
+  return (
+    <div className="timer-container">
+      <h2 id={`${id}-label`}>
+        {props.title} Length
+      </h2>
+      <div className="flex actions-wrapper">
+        <button id={`${id}-decrement`} onClick={props.handleDecrease}>
+          <i className="fas fa-minus" />
+        </button>
+        
+        <span id={`${id}-length`}>{props.count}</span>
+        
+        <button id={`${id}-increment`} onClick={props.handleIncrease}>
+          <i className="fas fa-plus" />
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
