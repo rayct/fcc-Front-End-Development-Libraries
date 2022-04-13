@@ -1,61 +1,112 @@
+// const audio = document.getElementById('beep');
+
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.loop = undefined;
-    }
-    state = {
-        breakCount: 5,
-        sessionCount: 25,
-        clockCount: 25 * 60,
-        currentTimer: 'Session',
-        isPlaying: false,
-        loop: undefined,
-    };
-
-    handlePlayPause = () => {
-        const { isPlaying } = this.state;
-
-        if (isPlaying) {
-            clearInterval(this.loop);
-            this.setState({ isPlaying: false });
-        } else {
-            this.setState({ isPlaying: true });
-
-            this.loop = setInterval(() => {
-                const { clockCount,
-                    currentTimer,
-                    breakCount,
-                    sessionCount
-                } = this.state;
-
-                if (clockCount === 0) {
-                    this.setState({
-                        currentTimer: (currentTimer === 'Session') ? 'Break' : 'Session', 
-              clockCount: (currentTimer === 'Session') ? (breakCount * 60) : (sessionCount * 60)
-          });
-        } else {
-        this.setState({
-          clockCount: clockCount - 1
-        });
-        }
-    }, 1000);
-}
+  state = {
+    breakCount: 5,
+    sessionCount: 25,
+    clockCount: 25 * 60,
+    currentTimer: 'Session',
+    isPlaying: false,
   };
 
-  //   handlePlayPause = () => {
-  //     clearInterval(this.loop);
-  //   };
+  constructor(props) {
+    super(props);
+    this.loop = undefined;
+  }
 
   componentWillUnmount() {
     clearInterval(this.loop);
   }
 
+  handlePlayPause = () => {
+    const { isPlaying } = this.state;
+
+    if (isPlaying) {
+      clearInterval(this.loop);
+
+      this.setState({ isPlaying: false });
+    } else {
+      this.setState({ isPlaying: true });
+
+      this.loop = setInterval(() => {
+        const { clockCount, currentTimer, breakCount, sessionCount } =
+          this.state;
+
+        if (clockCount === 0) {
+          this.setState({
+            currentTimer: currentTimer === 'Session' ? 'Break' : 'Session',
+            clockCount:
+              currentTimer === 'Session' ? breakCount * 60 : sessionCount * 60,
+          });
+
+          // audio.play();
+        } else {
+          this.setState({
+            clockCount: clockCount - 1,
+          });
+        }
+      }, 1000);
+    }
+  };
+
+  handleReset = () => {
+    this.setState({
+      breakCount: 5,
+      sessionCount: 25,
+      clockCount: 25 * 60,
+      currentTimer: 'Session',
+      isPlaying: false,
+    });
+
+    clearInterval(this.loop);
+  };
+
   convertToTime = (count) => {
     const minutes = Math.floor(count / 60);
     let seconds = count % 60;
 
+    // minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
+
     return `${minutes}:${seconds}`;
+  };
+
+  // audio.pause();
+  // audio.currentTime = 0;
+
+  handleBreakDecrease = () => {
+    const { breakCount } = this.state;
+    if (breakCount > 1) {
+      this.setState({
+        breakCount: breakCount - 1,
+      });
+    }
+  };
+
+  handleBreakIncrease = () => {
+    const { breakCount } = this.state;
+    if (breakCount < 60) {
+      this.setState({
+        breakCount: breakCount + 1,
+      });
+    }
+  };
+
+  handleSessionDecrease = () => {
+    const { sessionCount } = this.state;
+    if (sessionCount > 1) {
+      this.setState({
+        sessionCount: sessionCount - 1,
+      });
+    }
+  };
+  handleSessionIncrease = () => {
+    const { sessionCount } = this.state;
+    if (sessionCount < 60) {
+      this.setState({
+        sessionCount: sessionCount + 1,
+      });
+    }
   };
 
   render() {
@@ -65,9 +116,10 @@ class App extends React.Component {
     const breakProps = {
       title: 'Break Length',
       count: breakCount,
-      handleDecrease: this.handleDecrease,
-      handleIncrease: this.handleIncrease,
+      handleDecrease: this.handleBreakDecrease,
+      handleIncrease: this.handleBreakIncrease,
     };
+
     const sessionProps = {
       title: 'Session Length',
       count: sessionCount,
