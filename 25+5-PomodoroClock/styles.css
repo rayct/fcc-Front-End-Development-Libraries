@@ -1,68 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-* {
-    box-sizing: border-box;
+body {
+  background-color: #686de0;
+  font-size: 44px
 }
 
-body {
-    background-color: #383838;
-    /* color: #d1d0c5; */
-    /* color: #e2b714; */
-    /* color: #e8710a; */
-    color: #fff;
+.wrapper {
     display: flex;
-    align-items: center;
+    height: 100vh;
+    flex-direction: column;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    text-align: center;
+    align-items: center;
+}
+
+.wrapper h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.break-session-length {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
 }
 
 button {
-    background-color: transparent;
-    color: #f9ab00;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 10px;
-    padding: 10px 15px;
-    
+  border: none;
+  padding: 8px;
+  font-size: 28px;
+  border-radius: 4px;
 }
 
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+div > button {
+  color: white;
+  background-color: #f0932b;
 }
 
-.timer-container {
-    margin: -50px 20px 20px;
+div button:nth-child(2) {
+  color: #fff;
+  background-color: yellow;
 }
 
-.timer-container h2 {
-    margin: 0;
+strong {
+  margin: 0 8px;
 }
 
-.actions-wrapper span {
-    font-size: 35px;
-    margin: 0 10px;
-    width: 50px;
+.timer {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  margin: 40px 0px;
+  padding-top: 10px;
 }
 
-.clock-container {
-    border: 2px solid #fff;
-    border-radius: 10px; 
-    display: inline-block;
-    padding: 10px 100px;
-    margin-top: 20px;
-    width: 500px;
-
-}
-
-.clock-container h1 {
-    margin: 0;
-    /* color: #f9ab00; */
-}
-
-.clock-container span {
-    font-size: 60px;
+.timer-wrapper > button {
+  margin-left: 10px
 }
