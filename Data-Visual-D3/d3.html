@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization with D3</title>
+</head>
+<body>
+    
+    // Q1: Add Document Elements with D3
+    // Task: Use the select method to select the body tag in the document.
+    // Then append an h1 tag to it, and add the text Learning D3 into the h1 element.
+    <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+    </ul>
+
+  // Add your code below this line
+  // Solution:
+<script>
+    d3.select("body")
+    .append("h1")
+    .text("Learning D3");
+</script>
+
+// Add your code above this line
+
+
+//  Q2: Select a Group of Elements with D3
+// Task: Select all of the li tags in the document,
+// and change their text to the string list item by chaining the .text() method.
+
+// Add your code below this line
+// Solution: 
+<script>
+        const li = d3.selectAll('li') .text('list item');
+</script>
+     // Add your code above this line
+
+
+// Q3: Work with Data in D3
+// Task: Select the body node, then select all h2 elements. 
+// Have D3 create and append an h2 tag for each item in the dataset array.
+// The text in the h2 should say New Title. Your code should use the data() and enter() methods.
+
+<script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    // Add your code below this line
+
+
+
+    // Add your code above this line
+</script>
+    
+</body>
+</html>
