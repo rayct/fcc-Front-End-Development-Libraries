@@ -65,6 +65,7 @@
 </script>
 
 
+
 // Q4: Work with Dynamic Data in D3
 // Task: 
 // Change the text() method so that each h2 element displays the corresponding value from the dataset array
@@ -90,11 +91,38 @@
   </script>
 
 
+
 // Q5: Add Inline Styling to Elements
 // Task: 
 // Add the style() method to the code in the editor to make all the displayed text have a font-family of verdana.
 
-  <script>
+<script>
+const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+d3.select("body").selectAll("h2")
+    .data(dataset)
+    .enter()
+    .append("h2")
+    .text((d) => (d + " USD"))
+    // Add your code below this line
+
+    // Solution:
+    .style('font-family', 'verdana')
+
+    // Add your code above this line
+</script>
+
+
+
+// Q6: Change Styles Based on Data
+// Task:
+// Add the style() method to the code in the editor to set the color of the h2 elements conditionally.
+// Write the callback function so if the data value is less than 20, it returns red, otherwise it returns green.
+
+// Note:
+// You can use if-else logic, or the ternary operator.
+
+<script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
 
     d3.select("body").selectAll("h2")
@@ -103,8 +131,87 @@
       .append("h2")
       .text((d) => (d + " USD"))
       // Add your code below this line
-      
+      // Solution: 1 -  Using an Vanilla.js Function
+
+    .style('color', function(dataValue) {
+    if (dataValue < 20) {
+      return 'red';
+    } else {
+      return 'green';
+    }
+    });
+
+    // Solution: 2 - Using an Vanilla.js ES6 Arrow Function
+
+    .style('color', dataValue => {
+        if (dataValue < 20) {
+        return 'red';
+        } else {
+        return 'green';
+        }
+    });
+
+    // Solution: 3 - Using a ternary operator
+    .style('color', dataValue => {
+        return (dataValue < 20) ? 'red' : 'green';
+    });
+    // Add your code above this line
+  </script>
+
+
+
+// Q7: Add Classes with D3
+// Task:
+// Add the attr() method to the code in the editor and put a class of bar on the div elements.
+
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+
+<script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      // Add your code below this line
       // Solution:
+
+        .attr('class', 'bar');
+
+      // Add your code above this line
+  </script>
+
+
+
+// Q8: Add Classes with D3
+// Task:
+// Update the Height of an Element Dynamically
+
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+
+    <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      // Add your code below this line
 
 
 
