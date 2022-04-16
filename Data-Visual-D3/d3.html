@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Visualization with D3</title>
+    <title>FreeCodeCamp - Data Visualization with D3 Course</title>
 </head>
 <body>
 
 
     
     // Q1: Add Document Elements with D3
-    // Task: Use the select method to select the body tag in the document.
+    // Task:
+    // Use the select method to select the body tag in the document.
     // Then append an h1 tag to it, and add the text Learning D3 into the h1 element.
     <ul>
     <li>Example</li>
@@ -31,7 +32,8 @@
 
 
 //  Q2: Select a Group of Elements with D3
-// Task: Select all of the li tags in the document,
+// Task:
+// Select all of the li tags in the document,
 // and change their text to the string list item by chaining the .text() method.
 
 // Add your code below this line
@@ -44,7 +46,8 @@
 
 
 // Q3: Work with Data in D3
-// Task: Select the body node, then select all h2 elements. 
+// Task:
+// Select the body node, then select all h2 elements. 
 // Have D3 create and append an h2 tag for each item in the dataset array.
 // The text in the h2 should say New Title. Your code should use the data() and enter() methods.
 
@@ -63,7 +66,8 @@
 
 
 // Q4: Work with Dynamic Data in D3
-// Task: Change the text() method so that each h2 element displays the corresponding value from the dataset array
+// Task: 
+// Change the text() method so that each h2 element displays the corresponding value from the dataset array
 // with a single space and the string USD. 
 // For example, the first heading should be 12 USD.
 
@@ -75,9 +79,34 @@
       .enter()
       .append("h2")
       // Add your code below this line
+
+      // Solution 1:
+      .text((d) => { return + d + ' USD' })
+
+      // Solution 2:
+      .text((d) => (d + " USD"))
+
+      // Add your code above this line
+  </script>
+
+
+// Q5: Add Inline Styling to Elements
+// Task: 
+// Add the style() method to the code in the editor to make all the displayed text have a font-family of verdana.
+
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      // Add your code below this line
+      
       // Solution:
 
-      .text("New Title");
+
 
       // Add your code above this line
   </script>
