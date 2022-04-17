@@ -243,10 +243,7 @@ d3.select("body").selectAll("h2")
     height: 100px;
     /* Add your code below this line */
     /* Solution: */
-
-
-
-    
+    margin: 2px;
     /* Add your code above this line */
     display: inline-block;
     background-color: blue;
@@ -261,7 +258,35 @@ d3.select("body").selectAll("h2")
       .enter()
       .append("div")
       .attr("class", "bar")
-      .style("height", (d) => (d + "px")) // Change this line
+      .style("height", (d) => (d * 10 + "px")) // Change this line - Solution 1 - ES6 Solution
+      .style("height", (d) => `${d * 10}px`)   // Change this line - Solution 2 - Using String Interpritation
+  </script>
+
+
+
+// Q10: Learn About SVG in D3
+// Task:
+
+<style>
+  svg {
+    background-color: pink;
+  }
+</style>
+
+<script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+        // Add your code below this line
+
+                    .append('svg')
+                    .style('width', w)
+                    .style('height', h);
+
+         // Add your code above this line
   </script>
 
 </body>
