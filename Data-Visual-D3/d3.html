@@ -79,6 +79,7 @@
       .data(dataset)
       .enter()
       .append("h2")
+      
       // Add your code below this line
 
       // Solution 1:
@@ -104,6 +105,7 @@ d3.select("body").selectAll("h2")
     .enter()
     .append("h2")
     .text((d) => (d + " USD"))
+
     // Add your code below this line
 
     // Solution:
@@ -130,6 +132,7 @@ d3.select("body").selectAll("h2")
       .enter()
       .append("h2")
       .text((d) => (d + " USD"))
+
       // Add your code below this line
       // Solution: 1 -  Using an Vanilla.js Function
 
@@ -181,6 +184,7 @@ d3.select("body").selectAll("h2")
       .data(dataset)
       .enter()
       .append("div")
+
       // Add your code below this line
       // Solution:
 
@@ -213,6 +217,7 @@ d3.select("body").selectAll("h2")
       .enter()
       .append("div")
       .attr("class", "bar")
+
       // Add your code below this line
       // Solution: 1 Using String Interpretation
 
@@ -286,6 +291,7 @@ d3.select("body").selectAll("h2")
     const h = 100;
 
     const svg = d3.select("body")
+
         // Add your code below this line
         // Solution:
                     .append('svg')
@@ -318,6 +324,7 @@ d3.select("body").selectAll("h2")
                     .append("svg")
                     .attr("width", w)
                     .attr("height", h)
+
                     // Add your code below this line
                     // Solution:
                     .append('rect')
@@ -346,6 +353,7 @@ d3.select("body").selectAll("h2")
                   .attr("height", h);
 
     svg.selectAll("rect")
+
        // Add your code below this line
        // Solution:
 
@@ -385,6 +393,7 @@ d3.select("body").selectAll("h2")
        .enter()
        .append("rect")
        .attr("x", (d, i) => {
+
          // Add your code below this line
 
             return i * 30;
@@ -425,6 +434,7 @@ d3.select("body").selectAll("h2")
        .attr("y", 0)
        .attr("width", 25)
        .attr("height", (d, i) => {
+
          // Add your code below this line
 
             return d * 3;
@@ -460,6 +470,7 @@ d3.select("body").selectAll("h2")
        .append("rect")
        .attr("x", (d, i) => i * 30)
        .attr("y", (d, i) => {
+
          // Add your code below this line
          // Solution:
 
@@ -498,6 +509,7 @@ d3.select("body").selectAll("h2")
        .attr("y", (d, i) => h - 3 * d)
        .attr("width", 25)
        .attr("height", (d, i) => 3 * d)
+
        // Add your code below this line
        // Solution:
         .attr('fill', 'navy');
@@ -536,6 +548,7 @@ d3.select("body").selectAll("h2")
     svg.selectAll("text")
        .data(dataset)
        .enter()
+
        // Add your code below this line
        // Solution
 
@@ -583,9 +596,11 @@ d3.select("body").selectAll("h2")
        .text((d) => d)
        .attr("x", (d, i) => i * 30)
        .attr("y", (d, i) => h - (3 * d) - 3)
+
        // Add your code below this line
-
-
+        // Solution:
+        .style('fill', 'red')
+        .style('font-size', '25px')
 
        // Add your code above this line
   </script>
