@@ -755,19 +755,101 @@ d3.select("body").selectAll("h2")
 
 
 
-// Q22: 
+// Q22: Add Attributes to the Circle Elements
 // Task:
-// 
-// 
+// Add cx, cy, and r attributes to the circle elements.
+// The cx value should be the first number in the array for each item in dataset.
+// The cy value should be based off the second number in the array,
+// but make sure to show the chart right-side-up and not inverted. The r value should be 5 for all circles.
+
+<script>
+    const dataset = [
+                  [ 34,    78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,    411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,   333 ],
+                  [ 78,    320 ],
+                  [ 21,    123 ]
+                ];
+
+
+    const w = 500;
+    const h = 500;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+
+       // Add your code below this line
+        // Solution:
+        .attr('cx', (d) => d[0])
+        .attr('cy', (d) => h - d[1])
+        .attr('r', 5)
+       // Add your code above this line
+
+  </script>
 
 
 
 
-
-// Q23: 
+// Q23: Add Labels to Scatter Plot Circles
 // Task:
-// 
-// 
+// Label each point on the scatter plot using the text elements.
+// The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is 34, 78.
+// Set the x attribute so it's 5 units more than the value you used for the cx attribute on the circle.
+// Set the y attribute the same way that's used for the cy value on the circle.
+
+<script>
+    const dataset = [
+                  [ 34,    78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,    411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,   333 ],
+                  [ 78,    320 ],
+                  [ 21,    123 ]
+                ];
+
+
+    const w = 500;
+    const h = 500;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+       .attr("cx", (d, i) => d[0])
+       .attr("cy", (d, i) => h - d[1])
+       .attr("r", 5);
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       // Add your code below this line
+
+
+
+       // Add your code above this line
+  </script>
 
 
 
