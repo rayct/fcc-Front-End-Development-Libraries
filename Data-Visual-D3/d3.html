@@ -1089,7 +1089,7 @@ d3.select("body").selectAll("h2")
        .enter()
        .append("circle")
        .attr("cx", (d) => xScale(d[0]))
-       .attr("cy",(d) => yScale(d[1]))
+       .attr("cy", (d) => yScale(d[1]))
        .attr("r", (d) => 5);
 
     svg.selectAll("text")
@@ -1102,7 +1102,7 @@ d3.select("body").selectAll("h2")
 
     const xAxis = d3.axisBottom(xScale);
     // Add your code below this line
-    const yAxis = undefined;
+    const yAxis = d3.axisLeft(yScale);
     // Add your code above this line
 
     svg.append("g")
@@ -1110,9 +1110,9 @@ d3.select("body").selectAll("h2")
        .call(xAxis);
 
     // Add your code below this line
-
-
-
+    svg.append("g")
+        .attr("transform", "translate(" + padding + ", 0)")
+        .call(yAxis);
     // Add your code above this line
 
   </script>
