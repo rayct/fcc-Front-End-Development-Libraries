@@ -917,7 +917,7 @@ d3.select("body").selectAll("h2")
     const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
     // Add your code below this line
 
-    const output = d3.max(positionData, (d) => d[2]); // Change this line
+    const output = d3.max(positionData, d => d [2]); // Change this line ES6
 
     // Add your code above this line
 
@@ -937,7 +937,7 @@ d3.select("body").selectAll("h2")
 // Note:
 // Remember to keep the plot right-side-up. 
 // When you set the range for the y coordinates, the higher value (height minus padding) is the first argument,
-// and the lower value is the second argument.
+//  and the lower value is the second argument.
 
 <script>
     const dataset = [
@@ -967,7 +967,9 @@ d3.select("body").selectAll("h2")
 
     // Add your code below this line
 
-    const yScale = undefined;
+    const yScale = d3.scaleLinear()
+                    .domain([0, d3.max(dataset, (d) => d[1])])
+                    .range([h - padding, padding]);
 
 
     // Add your code above this line
