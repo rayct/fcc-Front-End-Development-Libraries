@@ -1,23 +1,21 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 Bar Chart</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="./styles.css">
-    <title>D3 Bar Chart UK - GDP</title>
 </head>
 <body>
-<div class="main">
-  <div class="container">
-    <div id="title">GDP</div>
-    <div id="x-axis"></div>
-    <div class="visHolder"></div>
-  </div>
-</div>
-<script type="text/babel" src="./app.js"></script>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <svg id='canvas'>
+        <text id='title' x='300' y='30'>USA GDP</text>
+    </svg>
 </body>
+<script type="text/babel" src="./app.js"></script>
+<script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
 </html>

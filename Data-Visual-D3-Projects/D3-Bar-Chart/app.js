@@ -1,34 +1,128 @@
-// d3.json(
-//   'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json'
-// );
-// Dummy Data
-const dummy = [
-  ['1947-01-01', 243.1],
-  ['1947-04-01', 246.3],
-  ['1947-07-01', 250.1],
-  ['1947-10-01', 260.3],
-  ['1948-01-01', 266.2],
-  ['1948-04-01', 272.9],
-  ['1948-07-01', 279.5],
-  ['1948-10-01', 280.7],
-  ['1949-01-01', 275.4],
-  ['1949-04-01', 271.7],
-  ['1949-07-01', 273.3],
-];
+let url =
+  'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json';
+let req = new XMLHttpRequest();
 
-const w = 500;
-const h = 500;
+let data;
+let values = [];
+let heightScale;
+let xScale;
+let xAxisScale;
+let yAxisScale;
+let xAxis;
+let yAxis;
 
-const svg = d3.select('body').append('svg').attr('width', w).attr('height', h);
+let width = 800;
+let height = 600;
+let padding = 40;
 
-svg
-  .selectAll('rect')
-  .data(dummy)
-  .enter()
-  .append('rect')
-  .attr('x', (d, i) => i * 30)
-  .attr('y', (d, i) => h - 3 * d)
-  .attr('width', 20)
-  .attr('height', (d) => d[1] + 'px')
-  .attr('fill', 'navy')
-  .attr('class', 'bar');
+let svg = d3.select('svg');
+
+let generateScales = () => {
+  heightScale = d3
+    .scaleLinear()
+    .domain([
+      0,
+      d3.max(values, (item) => {
+        return item[1];
+      }),
+    ])
+    .range([0, height - 2 * padding]);
+
+  xScale = d3
+    .scaleLinear()
+    .domain([0, values.length - 1])
+    .range([padding, width - padding]);
+};
+
+let drawCanvas = () => {
+  svg.attr('width', width);
+  svg.attr('height', height);
+};
+
+let drawBars = () => {
+  let tooltip = d3
+    .select('body')
+    .append('div')
+    .attr('id', 'tooltip')
+    .style('visibility', 'hidden');
+
+  svg
+    .selectAll('rect')
+    .data(values)
+    .enter()
+    .append('rect')
+    .attr('class', 'bar')
+    .attr('height', (item) => {
+      return heightScale(item[1]);
+    })
+    .attr('width', (width - 2 * padding) / values.length)
+    .attr('x', (item, index) => {
+      return xScale(index);
+    })
+    .attr('y', (item) => {
+      return height - padding - heightScale(item[1]);
+    })
+    .attr('data-date', (item) => {
+      return item[0];
+    })
+    .attr('data-gdp', (item) => {
+      return item[1];
+    })
+    .on('mouseover', (item) => {
+      tooltip.transition().style('visibility', 'visible');
+
+      document.querySelector('#tooltip').setAttribute('data-date', item[0]);
+      document.querySelector('#tooltip').textContent = item[0];
+    })
+    .on('mouseout', (d) => {
+      tooltip.transition().style('visibility', 'hidden');
+    });
+};
+
+let generateAxes = () => {
+  let dateArray = values.map((item) => {
+    return new Date(item[0]);
+  });
+
+  xAxisScale = d3
+    .scaleTime()
+    .domain([d3.min(dateArray), d3.max(dateArray)])
+    .range([padding, width - padding]);
+
+  yAxisScale = d3
+    .scaleLinear()
+    .domain([
+      0,
+      d3.max(values, (item) => {
+        return item[1];
+      }),
+    ])
+    .range([height - 2 * padding, 0]);
+
+  xAxis = d3.axisBottom(xAxisScale);
+  yAxis = d3.axisLeft(yAxisScale);
+
+  svg
+    .append('g')
+    .call(xAxis)
+    .attr('id', 'x-axis')
+    .attr('transform', 'translate(0, ' + (height - padding) + ')');
+
+  svg
+    .append('g')
+    .call(yAxis)
+    .attr('id', 'y-axis')
+    .attr('transform', 'translate(' + padding + ', ' + padding + ')');
+};
+
+req.open('GET', url, true);
+req.onload = () => {
+  data = JSON.parse(req.responseText);
+  values = data['data'];
+  console.log(values);
+  generateScales();
+  drawCanvas();
+  drawBars();
+  generateAxes();
+};
+req.send();

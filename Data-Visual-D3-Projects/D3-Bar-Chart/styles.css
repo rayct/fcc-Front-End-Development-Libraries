@@ -1,3 +1,54 @@
-rect {
+/* rect {
     fill: #6c5ce7;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    height: 100%
+}
+
+body {
+    background-color: #a29bfe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+svg{
+    background-color: #DEF2F1;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.bar{
+    background-color: #686de0;
+    border-color: #686de0;
+    fill: #686de0;
+}
+
+.bar:hover{
+    fill: #17252A
+}
+
+g{
+    color: #17252A
+}
+
+#tooltip{
+    margin-top: 10px;
+    color: #FEFFFF;
+    font-size: 28px;
+}
+
+#title{
+    font-size: 30px;
+    fill: #17252A;
 }
