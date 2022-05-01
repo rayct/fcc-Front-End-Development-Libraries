@@ -55,7 +55,7 @@ let drawPoints = () => {
     .enter()
     .append('circle')
     .attr('class', 'dot')
-    .attr('r', '5')
+    .attr('r', '7')
     .attr('data-xvalue', (item) => {
       return item['Year'];
     })
@@ -70,7 +70,7 @@ let drawPoints = () => {
     })
     .attr('fill', (item) => {
       if (item['URL'] === '') {
-        return 'lightgreen';
+        return '#2ecc71';
       } else {
         return 'orange';
       }

@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
-    /* font-family: 'Lato', sans-serif; */
-
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html{
@@ -20,7 +18,7 @@ body {
 }
 
 svg{
-    background-color: rgb(56, 58, 74);
+    background-color: #323437;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
     border-radius: 5px;
     padding: 15px;
@@ -61,4 +59,12 @@ g{
     font-size: 28px;
     fill: rgb(221, 221, 221);
     text-transform: camelcase;
+}
+
+#dope{
+    color: orange;
+}
+
+#nodope{
+    color: green;
 }
