@@ -68,13 +68,13 @@ let drawBars = () => {
     .attr('data-gdp', (item) => {
       return item[1];
     })
-    .on('mouseover', (item) => {
+    .on('mouseover', (event, item) => {
       tooltip.transition().style('visibility', 'visible');
 
       document.querySelector('#tooltip').setAttribute('data-date', item[0]);
       document.querySelector('#tooltip').textContent = item[0];
     })
-    .on('mouseout', (d) => {
+    .on('mouseout', (event, item) => {
       tooltip.transition().style('visibility', 'hidden');
     });
 };
