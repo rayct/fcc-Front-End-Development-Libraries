@@ -75,7 +75,7 @@ let drawPoints = () => {
         return 'orange';
       }
     })
-    .on('mouseover', (item) => {
+    .on('mouseover', (event, item) => {
       tooltip.transition().style('visibility', 'visible');
 
       if (item['Doping'] != '') {
@@ -102,7 +102,7 @@ let drawPoints = () => {
 
       tooltip.attr('data-year', item['Year']);
     })
-    .on('mouseout', (item) => {
+    .on('mouseout', (event, item) => {
       tooltip.transition().style('visibility', 'hidden');
     });
 };
