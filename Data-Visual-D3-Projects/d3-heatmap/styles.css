@@ -19,9 +19,9 @@ body {
 }
 
 svg{
-    background-color: #163D57;
-    /*box-shadow: 0px 3px 15px rgba(0,0,0,0.2); */
-    /*border-radius: 5px; */
+    background-color: #2f3640;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
+    /* border-radius: 5px; */
     padding: 10px;
 }
 
@@ -45,13 +45,13 @@ g{
     width: auto;
     margin-top: 2px;
     color: #163D57;
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 5px;
 }
 
 #legend{
     color: rgb(56, 58, 74);
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
     min-height: 150px;
 }
@@ -59,7 +59,7 @@ g{
 
 #title{
     font-size: 28px;
-    color: #163D57;
+    color: #2f3640;
     text-transform: uppercase;
     margin-top: 10px;
     margin-bottom: 10px;
