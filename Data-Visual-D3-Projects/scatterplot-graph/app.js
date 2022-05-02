@@ -55,7 +55,7 @@ let drawPoints = () => {
     .enter()
     .append('circle')
     .attr('class', 'dot')
-    .attr('r', '7')
+    .attr('r', '6')
     .attr('data-xvalue', (item) => {
       return item['Year'];
     })
