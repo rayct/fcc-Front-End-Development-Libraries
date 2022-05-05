@@ -15,7 +15,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100%;
-    color: #163D57
+    color: #163D57;
+    font-size: 19px;
 }
 
 svg{
