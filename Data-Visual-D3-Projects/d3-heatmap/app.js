@@ -53,13 +53,13 @@ let drawCells = () => {
     .attr('fill', (item) => {
       let variance = item['variance'];
       if (variance <= -1) {
-        return 'SteelBlue';
+        return '#0652DD';
       } else if (variance <= 0) {
-        return 'LightSteelBlue';
+        return '#12CBC4';
       } else if (variance <= 1) {
-        return 'Orange';
+        return '#FFC312';
       } else {
-        return 'Crimson';
+        return '#EA2027';
       }
     })
     .attr('data-year', (item) => {
