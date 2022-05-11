@@ -26,13 +26,13 @@ let drawMap = () => {
       });
       let percentage = county['bachelorsOrHigher'];
       if (percentage <= 15) {
-        return 'tomato';
+        return '#d63031';
       } else if (percentage <= 30) {
-        return 'orange';
+        return '#fab1a0';
       } else if (percentage <= 45) {
-        return 'lightgreen';
+        return '#a29bfe';
       } else {
-        return 'limegreen';
+        return '#6c5ce7';
       }
     })
     .attr('data-fips', (countyDataItem) => {
