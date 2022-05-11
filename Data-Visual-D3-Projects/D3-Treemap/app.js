@@ -1,5 +1,12 @@
+// D3 - Treemap
+
 let movieDataUrl =
   'https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json';
+// let movieDataUrl =
+// 'https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json';
+
+// let movieDataUrl =
+//   'https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json';
 
 let movieData;
 
@@ -18,7 +25,7 @@ let drawTreeMap = () => {
       return node2['value'] - node1['value'];
     });
 
-  let createTreeMap = d3.treemap().size([1000, 600]);
+  let createTreeMap = d3.treemap().size([1300, 700]);
 
   createTreeMap(hierarchy);
 
