@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+/* D3 - Choropleth Map */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html, body{
@@ -9,21 +11,21 @@ html, body{
 }
 
 body {
-    background-color: #2A2D2D;
+    background-color: #e6e6e6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #FDF1E7;
+    color: #000000;
     margin: none;
 }
 
 svg{
-    background-color: #305555;
+    background-color: #e6e6e6;
     /*box-shadow: 0px 3px 15px rgba(0,0,0,0.2); */
     /*border-radius: 5px; */
-    padding: 10px;
-    border-radius: 5px;
+    padding: 15px;
+    /* border-radius: 5px; */
 }
 
 #canvas{
@@ -37,7 +39,7 @@ svg{
 }
 
 g{
-    color: #FDF1E7
+    color: #b7b7b7
 }
 
 #tooltip{
@@ -45,8 +47,8 @@ g{
     height: auto;
     width: auto;
     margin-top: 2px;
-    color: #FDF1E7;
-    font-size: 24px;
+    color: #59514a;
+    font-size: 26px;
     margin-bottom: 5px;
 }
 
@@ -55,35 +57,22 @@ g{
     font-size: 18px;
     text-align: center;
     min-height: 150px;
-    max-width: 180px;
+    /* max-width: 180px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 40px; */
 }
 
 
 #title{
     font-size: 28px;
-    color: #FDF1E7;
+    color: #000000;
     text-transform: uppercase;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 #description a{
     text-decoration: none;
-    color: #FDF1E7;
+    color: #ff8e31;
     text-align: center;
-}
-
-#container{
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-#rightSide{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
 }

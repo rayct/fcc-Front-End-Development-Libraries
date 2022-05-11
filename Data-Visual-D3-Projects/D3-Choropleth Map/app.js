@@ -1,3 +1,5 @@
+// D3 - Choropleth Map
+
 let countyURL =
   'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json';
 let educationURL =
@@ -44,7 +46,7 @@ let drawMap = () => {
       let percentage = county['bachelorsOrHigher'];
       return percentage;
     })
-    .on('mouseover', (countyDataItem) => {
+    .on('mouseover', (event, countyDataItem) => {
       tooltip.transition().style('visibility', 'visible');
 
       let id = countyDataItem['id'];
@@ -65,7 +67,7 @@ let drawMap = () => {
 
       tooltip.attr('data-education', county['bachelorsOrHigher']);
     })
-    .on('mouseout', (countyDataItem) => {
+    .on('mouseout', (event, countyDataItem) => {
       tooltip.transition().style('visibility', 'hidden');
     });
 };

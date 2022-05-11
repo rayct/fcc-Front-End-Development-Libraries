@@ -1,3 +1,5 @@
+/* D3 - Heatmap */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
@@ -14,9 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100%;
     color: #163D57;
-    font-size: 19px;
 }
 
 svg{
