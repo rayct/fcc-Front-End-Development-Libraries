@@ -21,15 +21,17 @@ body {
 svg{
     /* background-color: #1D1F20; */
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-    padding: 20px;
+    padding: 40px;
     font-size: 10px;
+    /* margin: 10px; */
     text-align: center;
+    display: block;
     /* border-radius: 5px; */
 }
 
 #canvas{
     min-height: 700px;
-    min-width: 1300px;
+    min-width: 1500px;
 }
 
 
@@ -45,20 +47,20 @@ g{
 #tooltip{
     visibility: hidden;
     min-height: 160px;
-    width: 200px;
+    width: 250px;
     margin-top: 2px;
     color: #1D1F20;
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-size: 20px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 #tooltip hr{
-    width: '80%';
+    width: '100%';
     color: #1D1F20;
     background-color: #1D1F20;
-    height:1px;
-    border:none;
+    height: 1px;
+    border: none;
 }
 
 #description{
@@ -83,8 +85,8 @@ g{
     color: #1D1F20;
     text-transform: capitalize;
     text-align: center;
-    /* margin-top: 10px; */
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
