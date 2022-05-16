@@ -92,8 +92,14 @@ let drawTreeMap = () => {
     .text((movie) => {
       return movie['data']['name'];
     })
+    // .selectAll('tspan')
+    // .data((d) => d.data.name.split(/(?=[A-Z][A-Z])/g))
+    // .enter()
+    // .text((d) => d)
+    // .append('tspan')
     .attr('x', 5)
     .attr('y', 20);
+  // .attr('y', (d, i) => 15 + i * 15)
 };
 
 d3.json(movieDataUrl).then((data, error) => {

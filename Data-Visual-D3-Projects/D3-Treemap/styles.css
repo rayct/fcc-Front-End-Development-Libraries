@@ -41,7 +41,8 @@ svg{
 
 
 g{
-    color: #1D1F20
+    color: #1D1F20;
+    /* font-size: 10px; */
 }
 
 #tooltip{
