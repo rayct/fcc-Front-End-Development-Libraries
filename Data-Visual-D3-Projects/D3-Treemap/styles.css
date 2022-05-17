@@ -9,17 +9,17 @@ html, body{
 }
 
 body {
-    background-color: #ef6a144d;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #b5967c;
-    margin: none;
+    color: #718093;
+    /* margin: none; */
 }
 
 svg{
-    /* background-color: #1D1F20; */
+    background-color: #718093;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     padding: 40px;
     font-size: 10px;
@@ -36,7 +36,7 @@ svg{
 
 
 .tile:hover{
-    fill: Gainsboro
+    fill: #dcdde1
 }
 
 
