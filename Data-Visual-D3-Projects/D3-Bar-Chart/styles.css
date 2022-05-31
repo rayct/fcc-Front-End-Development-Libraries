@@ -52,3 +52,7 @@ g{
     font-size: 30px;
     fill: #17252A;
 }
+
+#author a{
+    color: #ececf4;
+}
